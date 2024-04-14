@@ -64,7 +64,9 @@ star in HIPPARCOS code; latitude; longitude
 There are just three rejects:
 
 HIP71683 - Rigil Kentaurus
+
 HIP69673 - Arcturus
+
 HIP97649 - Altair
 
 You can explore the effect of uncommenting those lines in the result.
