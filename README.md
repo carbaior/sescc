@@ -23,7 +23,7 @@ https://pandas.pydata.org/
 
 sescc.py:
 
-Basic usage in LINUX:
+** Basic usage in LINUX: **
 
 0. Install libraries:
 
@@ -47,9 +47,9 @@ cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
 
-Syntax for WINDOWS:
+** Syntax for WINDOWS: **
 
-O. Install python, after that libraries like in linux (step 0)
+0. Install python, after that libraries like in linux (step 0)
 
 1.Date Almagest by latitudes:
 
