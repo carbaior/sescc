@@ -14,16 +14,21 @@ This is the sescc dating program, you can use it to PROVE the Almagest was initi
 
 sescc can reliably date the Almagest by latitudes or longitudes, as well as any other catalog compiled in ecliptic coordinates, between -1500 and 1900 C.E.
 
-This program requires Python and the Skyfield and Numpy libraries:
+This program requires Python and the Skyfield and Numpy and Panda libraries:
 
 https://www.python.org/
 https://rhodesmill.org/skyfield/
 https://numpy.org/
+https://pandas.pydata.org/
 
 sescc.py:
 
-Basic usage in linux:
+Basic usage in LINUX:
 
+0. Install libraries:
+
+ pip install pandas skyfield numpy
+ 
 1.Date Almagest by latitudes:
 
 cat catalogs/almagest.csv | ./sescc.py 0
@@ -42,6 +47,19 @@ cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
 
+Syntax for WINDOWS:
+
+O. Install python, after that libraries like in linux (step 0)
+
+1.Date Almagest by latitudes:
+
+python sescc.py < catalogs/almagest.csv
+
+2.Date Almagest by longitudes:
+
+python sescc.py 1 < catalogs/almagest.csv
+
+etc...
 
 stella.py:
 
