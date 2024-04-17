@@ -5,7 +5,7 @@ sescc (Speed/Error Signal Cross Correlation) is a method for dating stellar cata
 asinfreedom@gmail.com
 cliolapso.blogspot.com
 
-WARNING: This program downloads 1.5Gb of data in its first run. more info: https://rhodesmill.org/skyfield/planets.html
+WARNING: This program downloads 1.5Gb of ephemeris from NASA in its first run. more info: https://rhodesmill.org/skyfield/planets.html
 
 sescc was made to astronomically date Ptolemy's Almagest. 
 more info: https://cliolapso.blogspot.com/2024/04/fin-de-la-nueva-cronologia.html
