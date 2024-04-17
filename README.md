@@ -65,11 +65,13 @@ Dissection of "New Chronology's" "informative kernel":
 +Regulus, Spica, Vega, Antares, Asellus: Hipparchus (-2nd century)
 
 "New Chronology's" dating is dominated by Arcturus due its much higher relative proper motion:
+![FKN kernel relative speeds.](plots/rel_speeds.png)
 
 "informative kernel" w/o Arcturus is dominated by Regiomontanus stars:
-![Almagest dating by longitudes.](fkn_lat_sin_arcturus.png)
+![FKN kernel w/o Arcturus.](plots/fkn_lat_sin_arcturus.png)
 
-That's how they achieved a 10th Century date. This is **scientific fraud in plain sight.**
+That's how they achieved a 10th Century date.
+This is **scientific fraud in plain sight.**
 
 **Syntax for WINDOWS:**
 
