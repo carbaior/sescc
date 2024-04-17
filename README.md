@@ -47,13 +47,29 @@ cat catalogs/almagest.csv | ./sescc.py 0
 
 cat catalogs/almagest.csv | ./sescc.py 1
 
-### 3.Date New Chronology 'informative kernel' by latitudes (longitudes):
+### 3.Date New Chronology's 'informative kernel' by latitudes (longitudes):
 
 cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
-### 4.Date New Chronology 'informative kernel' without Arcturus by latitudes (longitudes):
+### 4.Date New Chronology's 'informative kernel' without Arcturus by latitudes (longitudes):
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
+
+**NOTE**: "New Chronology's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars* that will give a late date. 
+Those stars where updated by later astronomers, Battani in 9th Cy, Regiomontanus in 15 cy.
+
+Dissection of "New Chronology's" "informative kernel":
+
++Procyon, Capella: Regiomontanus (15th century)
++Arcturus: Al-Battani (9th century)
++Regulus, Spica, Vega, Antares, Asellus: Hipparchus (-2nd century)
+
+"New Chronology's" dating is dominated by Arcturus due its much higher relative proper motion:
+
+"informative kernel" w/o Arcturus is dominated by Regiomontanus stars:
+![Almagest dating by longitudes.](fkn_lat_sin_arcturus.png)
+
+That's how they achieved a 10th Century date. This is **scientific fraud in plain sight.**
 
 **Syntax for WINDOWS:**
 
