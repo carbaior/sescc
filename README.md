@@ -67,7 +67,7 @@ Creates a catalog for any epoch, list of stars is taken from another catalog, ex
 
 cat catalogs/fkn_kernel.csv | ./stella.py 1100 10 0 0 | ./sescc.py
 
-This takes the list of stars detailed in 'fkn_kernel.csv' and creates a new catalog for year 1100, with 10' resolution (using the fractional system of the Almagest), with 0º of systemical error and 0º of random error.
+This takes the list of stars detailed in 'fkn_kernel.csv' and creates a new catalog for year 1100, with 10' resolution (using the fractional system of the Almagest), with 0' of systemical error and 0' of random error.
 
 You can feed the output to sescc.py to verify it works as expected. stella.py can also be used to prove that sescc.py doesn't date the longitudes by their magnitude. Magnitudes can be adjusted for the axial precession of any other epoch and the results will be the same.
 
