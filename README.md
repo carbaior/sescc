@@ -36,7 +36,7 @@ pip install pandas skyfield numpy
 
 cat catalogs/almagest.csv | ./sescc.py 0
 
-(Load .csv file to spreadsheet, then graph a dispersion plot with the data.)
+(Load generated .csv file to spreadsheet, then graph a dispersion plot with the data.)
 
 2.Date Almagest by longitudes:
 
