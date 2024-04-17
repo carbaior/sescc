@@ -22,6 +22,12 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
 + https://numpy.org/
 + https://pandas.pydata.org/
 
+## some results:
+
+![Almagest dating by latitudes.](plots/alm_lat.png)
+
+![Almagest dating by longitudes.](plots/alm_lat.png)
+
 ## sescc.py:
 
 **Basic usage in LINUX:**
