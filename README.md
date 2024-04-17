@@ -27,7 +27,7 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
 
 ![Almagest dating by latitudes.](plots/alm_lat.png)
 
-![Almagest dating by longitudes.](plots/alm_lat.png)
+![Almagest dating by longitudes.](plots/alm_lon.png)
 
 ## sescc.py:
 
