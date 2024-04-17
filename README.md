@@ -3,7 +3,9 @@
 ## **Speed/Error Signal Cross Correlation** is a method for dating stellar catalogs in ecliptical coordinates
 
 2024 Carlos Baiget Orts
+
 asinfreedom@gmail.com
+
 cliolapso.blogspot.com
 
 **WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** 
