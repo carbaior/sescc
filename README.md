@@ -14,11 +14,14 @@ This is the sescc dating program, you can use it to PROVE the Almagest was initi
 
 sescc can reliably date the Almagest by latitudes or longitudes, as well as any other catalog compiled in ecliptic coordinates, between -1500 and 1900 C.E.
 
-This program requires Python and the Skyfield and Numpy and Panda libraries:
+This program requires Python, Skyfield, Numpy and Panda libraries:
 
 https://www.python.org/
+
 https://rhodesmill.org/skyfield/
+
 https://numpy.org/
+
 https://pandas.pydata.org/
 
 sescc.py:
