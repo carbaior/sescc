@@ -30,7 +30,7 @@ sescc.py:
 
 0. Install libraries:
 
- pip install pandas skyfield numpy
+pip install pandas skyfield numpy
  
 1.Date Almagest by latitudes:
 
