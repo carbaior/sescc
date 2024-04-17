@@ -118,5 +118,5 @@ HIP97649 - Altair
 
 You can explore the effect of uncommenting those lines in the result.
 
-First line must be HIP35550, which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
+First line must be HIP35550 (Delta Geminorum), which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
 More info: https://cliolapso.blogspot.com/2024/04/fin-de-la-nueva-cronologia.html
