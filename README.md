@@ -1,17 +1,18 @@
 # sescc
 
-## sescc (Speed/Error Signal Cross Correlation) is a method for dating stellar catalogs in ecliptical coordinates
+## **Speed/Error Signal Cross Correlation** is a method for dating stellar catalogs in ecliptical coordinates
 
 2024 Carlos Baiget Orts
 asinfreedom@gmail.com
 cliolapso.blogspot.com
 
-**WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** more info: https://rhodesmill.org/skyfield/planets.html
+**WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** 
+more info: https://rhodesmill.org/skyfield/planets.html
 
-sescc was made to astronomically date Ptolemy's Almagest. 
+**sescc was made to astronomically date Ptolemy's Almagest.** 
 more info: https://cliolapso.blogspot.com/2024/04/fin-de-la-nueva-cronologia.html
 
-This is the sescc dating program, you can use it to PROVE the Almagest was initially compiled by Hipparchus and Ptolemy in the -2nd and 2nd century C.E.
+This is the sescc dating program, you can use it to **SCIENTIFICALLY PROVE** that the Ptolemy's Almagest was initially compiled by Hipparchus and Ptolemy in the -2nd and 2nd century C.E.
 
 sescc can reliably date the Almagest by latitudes or longitudes, as well as any other catalog compiled in ecliptic coordinates, between -1500 and 1900 C.E.
 
