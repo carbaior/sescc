@@ -62,9 +62,9 @@ Those stars where updated by later astronomers, Battani in 9th Cy, Regiomontanus
 
 Dissection of "New Chronology's" "informative kernel":
 
-+Procyon, Capella: Regiomontanus (15th century)
-+Arcturus: Al-Battani (9th century)
-+Regulus, Spica, Vega, Antares, Asellus: Hipparchus (-2nd century)
++ Procyon, Capella: Regiomontanus (15th century)
++ Arcturus: Al-Battani (9th century)
++ Regulus, Spica, Vega, Antares, Asellus: Hipparchus (-2nd century)
 
 "New Chronology's" dating is dominated by Arcturus due its much higher relative proper motion:
 ![FKN kernel relative speeds.](plots/rel_speeds.png)
