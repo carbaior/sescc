@@ -57,7 +57,7 @@ cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
 
-**NOTE**: "New Chronology's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars* that will give a late date. 
+**NOTE**: "New Chronology's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars** that will give a late date. 
 Those stars where updated by later astronomers, Battani in 9th Cy, Regiomontanus in 15 cy.
 
 Dissection of "New Chronology's" "informative kernel":
@@ -73,7 +73,24 @@ Dissection of "New Chronology's" "informative kernel":
 ![FKN kernel w/o Arcturus.](plots/fkn_lat_sin_arcturus.png)
 
 That's how they achieved a 10th Century date.
+
 If this error is not admitted, it's just **scientific fraud in plain sight.**
+
+If admitted, an honest explanation be explored:
+
+The selection criteria looking for **bright and quick** stars **had an implicit and lethal risk**: that precisely those were most carefully tracked by later astronomers who of course **noticed the error and updated the catalog.**
+
+Results indicate that this is what happened with al-Battani, who updated Arcturus in the 9th century, and Regiomontanus, who updated Procyon and Capella in the 15th.
+Those updates made their way into the canonical edition of the Almagest in the 15th century, by none other than Regiomontanus.
+Later researchers thought erroneously that the whole catalog was from Ptolemy. Detected incosistencies, attributed him a fraud. 
+
+However, the main result of SESCC is that **Star positions and established chronology of the Almagest are fully coherent.**
+
+Clarifications:
++**Any other onsideration** about **any other information** within the Almagest **requires a separate analisys.**
++SESCC results **do not contradict the conclusions of the book "The Crime of Claudius Ptolemy"** from R.R. Newton (1977). In fact, its a corroboration of one of the main points in it: that it contains original work from Hipparchus.
+As SESCC shows, this part is precisely the LATITUDES part of almost all the star positions.
+
 
 **Syntax for WINDOWS:**
 
