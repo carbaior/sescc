@@ -157,4 +157,4 @@ Por supuesto es posible que alguien lo eche de menos, y le parezca extraño el c
 
 Hice copia de esta nota en archive.org por si alguien llega allí buscando esta información, y lo borré. Sin embargo aparentemente no lo hice bien y guardé solo la entrada, no el blog. Ahora no la puedo encontrar.
 
--"El problema con el mundo es que los tontos están seguros de todo y los inteligentes están llenos de dudas"-. Bertrand Russell. 
+_"El problema con el mundo es que los tontos están seguros de todo y los inteligentes están llenos de dudas"._ Bertrand Russell. 
