@@ -137,3 +137,24 @@ You can explore the effect of uncommenting those lines in the result.
 
 First line must be HIP35550 (Delta Geminorum), which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
 More info: https://cliolapso.blogspot.com/2024/04/fin-de-la-nueva-cronologia.html
+
+*************************************************************************************************************
+NOTA a los lectores de mi blog, el cual cerré sin previo aviso:
+
+Abrí el blog en 2018 para generar debate sobre un tema que captó mi interés.
+
+Nunca cumplió su objetivo: ni generó debate ni mantuvo mi interés.
+
+Su contenido era un torro y no aportaba nada que no se pueda ver en otro lugar, haber dejado el contenido suponía hacer una revisión de todos los artículos, pues llegué a la conclusión de que debían tener errores, y dudé de lo que había asegurado.
+
+Como digo, es un trabajo que no se puede hacer sin el interés que requiere hacerlo.
+
+Así que lo borro todo y con ello, cierro una etapa.
+
+Me habría despedido, pero no tenía de quién: nunca tuvo suscriptores y creo que más de la mitad de los que visitaban este blog habían acabado aquí por casualidad.
+
+Por supuesto es posible que alguien lo eche de menos, y le parezca extraño el cierre repentino, por eso dejo esta nota. No hay nada de extraño, yo no tenía presencia en internet antes de este hobby y quiero seguir sin tenerla después de él.
+
+Hice copia de esta nota en archive.org por si alguien llega allí buscando esta información, y lo borré. Sin embargo aparentemente no lo hice bien y guardé solo la entrada, no el blog. Ahora no la puedo encontrar.
+
+-"El problema con el mundo es que los tontos están seguros de todo y los inteligentes están llenos de dudas"-. Bertrand Russell. 
