@@ -73,7 +73,7 @@ Dissection of "New Chronology's" "informative kernel":
 ![FKN kernel w/o Arcturus.](plots/fkn_lat_sin_arcturus.png)
 
 That's how they achieved a 10th Century date.
-This is **scientific fraud in plain sight.**
+If this error is not admitted, it's just **scientific fraud in plain sight.**
 
 **Syntax for WINDOWS:**
 
