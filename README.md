@@ -87,7 +87,7 @@ Later researchers thought erroneously that the whole catalog was from Ptolemy. D
 However, the main result of SESCC is that **Star positions and established chronology of the Almagest are fully coherent.**
 
 Clarifications:
-+ **Any other onsideration** about **any other information** within the Almagest **requires a separate analisys.**
++ **Any other consideration** about **any other information** within the Almagest **requires a separate analisys.**
 + SESCC results **do not contradict the conclusions of the book "The Crime of Claudius Ptolemy"** from R.R. Newton (1977). In fact, its a corroboration of one of the main points in it: that it contains original work from Hipparchus.
 + As SESCC shows, this part is precisely the LATITUDES part of almost all the star positions.
 
