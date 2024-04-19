@@ -6,13 +6,10 @@
 
 asinfreedom@gmail.com
 
-cliolapso.blogspot.com
-
 **WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** 
 more info: https://rhodesmill.org/skyfield/planets.html
 
 **sescc was made to astronomically date Ptolemy's Almagest.** 
-more info: https://cliolapso.blogspot.com/2024/04/fin-de-la-nueva-cronologia.html
 
 This is the sescc dating program, you can use it to **SCIENTIFICALLY PROVE** that the Ptolemy's Almagest was initially compiled by Hipparchus and Ptolemy in the -2nd and 2nd century C.E.
 
