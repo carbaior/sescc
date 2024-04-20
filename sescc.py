@@ -36,9 +36,8 @@ if n>4:
 	error()
 
 siglos=30 #centuries to scan into the past
-resolucion=10 #every # years (10 = every decade)
-maxt=siglos*(10//resolucion) #number of iterations
-maxt=maxt*resolucion #number of iteration
+resolucion=25 #every # years (10 = every decade)
+maxt=siglos*100//resolucion #*resolucion #number of iteration
 fechamax=1900 #from year
 
 def ecpos(hip,t):
