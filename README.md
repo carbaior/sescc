@@ -3,6 +3,12 @@
 2024 Carlos Baiget Orts
 asinfreedom@gmail.com
 
+*"If a man will begin with certainties, he shall end in doubts; but if he will be content to begin with doubts, he shall end in certainties."* 
+
+Francis Bacon, "The Advancement of Learning".
+
+I was content to begin with doubts, so here is sescc.
+
 ## **sescc** settles ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
 
 sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** (sescc for short)
