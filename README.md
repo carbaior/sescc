@@ -15,6 +15,8 @@ sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in
 
 sescc is a **generic method** for dating stellar catalogs compiled in ecliptical coordinates.
 
+sescc is the **first and only method** which finds the date of catalog by the speed/error correlation of the stars and uses an static star for frame reference.
+
 sescc provides:
 
 + reliably dating the Almagest by latitudes **or LONGITUDES.**
@@ -23,7 +25,7 @@ sescc provides:
 + PROOF that the Almagest **LATITUDES were measured by Hipparchus** himself in -2nd cy.
 + PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
 + PROOF that  *the other dating method(1)* that points to the medieval period is **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below)
-+ PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary respositories, a great deal BEFORE the 11th century.
++ PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary respositories, a great deal **BEFORE** the 11th century.
 
 ## Related research / background:
 
@@ -31,6 +33,7 @@ sescc provides:
 + On the Origin of the Ptolemaic Star Catalogue, parts 1 & 2 (https://adsabs.harvard.edu/full/1987JHA....18..155E) (https://adsabs.harvard.edu/full/1987JHA....18..233E)
 + The enigma of Ptolemy's catalogue of stars (https://adsabs.harvard.edu/full/1992JHA....23..173S)
 + The dating of Ptolemy's Star Catalogue (https://adsabs.harvard.edu/full/2002JHA....33..265D)
++ Dating Ptolemy's star catalogue through proper motions: the Hipparchan epoch (https://adsabs.harvard.edu/full/2000JHA....31..115D)
 + Declinations int the Almagest: accuracy, epoch, and observers (https://www.narit.or.th/files/JAHH/2014JAHHvol17/2014JAHH...17..326B.pdf)
 + (1) Geometrical and statistical methods of analysis of star configurations : dating Ptolemy's Almagest (https://library.navoiy-uni.uz/files/fomenko%20a.%20t.,%20kalashnikov%20v.%20v.,%20nosovsky%20g.%20v.%20-%20geometrical%20and%20statistical%20methods%20of%20analysis%20of%20star%20configurations%20(2000)(300s).pdf)
 
