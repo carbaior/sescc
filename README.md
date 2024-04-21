@@ -15,7 +15,7 @@ sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in
 
 sescc is a **generic method** for dating stellar catalogs compiled in ecliptical coordinates.
 
-sescc is the **first and only method** which finds the date of catalog by the speed/error correlation of the stars and uses an static star for frame reference.
+sescc is the **first and only method** to find the date of catalog by the speed/error correlation of the stars and uses an static star for frame reference.
 
 sescc provides:
 
