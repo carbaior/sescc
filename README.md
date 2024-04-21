@@ -25,13 +25,16 @@ sescc provides:
 + PROOF that  *the other dating method(1)* that points to the medieval period is **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below)
 + PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary respositories, a great deal BEFORE the 11th century.
 
-## Related research:
+## Related research / background:
 
-+ DATING THE ALMAGEST STAR CATALOGUE USING PROPER MOTIONS:A RECONSIDERATION (https://people.sc.fsu.edu/~dduke/pmotion.pdf)
++ Dating the Almagest star catalogue using proper motions: a reconsideration (https://people.sc.fsu.edu/~dduke/pmotion.pdf)
++ On the Origin of the Ptolemaic Star Catalogue, parts 1 & 2 (https://adsabs.harvard.edu/full/1987JHA....18..155E) (https://adsabs.harvard.edu/full/1987JHA....18..233E)
++ The enigma of Ptolemy's catalogue of stars (https://adsabs.harvard.edu/full/1992JHA....23..173S)
++ The dating of Ptolemy's Star Catalogue (https://adsabs.harvard.edu/full/2002JHA....33..265D)
++ Declinations int the Almagest: accuracy, epoch, and observers (https://www.narit.or.th/files/JAHH/2014JAHHvol17/2014JAHH...17..326B.pdf)
 + (1) Geometrical and statistical methods of analysis of star configurations : dating Ptolemy's Almagest (https://library.navoiy-uni.uz/files/fomenko%20a.%20t.,%20kalashnikov%20v.%20v.,%20nosovsky%20g.%20v.%20-%20geometrical%20and%20statistical%20methods%20of%20analysis%20of%20star%20configurations%20(2000)(300s).pdf)
 
-## Description:
-
+## sescc description / usage:
 
 **WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** 
 more info: https://rhodesmill.org/skyfield/planets.html
