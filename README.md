@@ -1,10 +1,30 @@
 # sescc
 
-## **Speed/Error Signal Cross Correlation** is a method for dating stellar catalogs in ecliptical coordinates
-
 2024 Carlos Baiget Orts
-
 asinfreedom@gmail.com
+
+## **sescc** settles ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
+
+sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** (sescc for short)
+
+sescc is a **generic method** for dating stellar catalogs compiled in ecliptical coordinates.
+
+sescc provides:
+
++ reliably dating the Almagest by latitudes **or LONGITUDES.**
++ reliably dating the Almagest by **TENS to HUNDREDS of its stars.**
++ PROOF that the Almagest **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 2nd cy.
++ PROOF that the Almagest **LATITUDES were measured by Hipparchus** himself in -2nd cy.
++ PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
++ PROOF that  *the other dating method(1)* that points to the medieval period are **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below)
++ PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary respositories, a great deal BEFORE the 11th century.
+
+## Related research:
+
++ DATING THE ALMAGEST STAR CATALOGUE USING PROPER MOTIONS:A RECONSIDERATION (https://people.sc.fsu.edu/~dduke/pmotion.pdf)
++ (1) Geometrical and statistical methods of analysis of star configurations : dating Ptolemy's Almagest (https://library.navoiy-uni.uz/files/fomenko%20a.%20t.,%20kalashnikov%20v.%20v.,%20nosovsky%20g.%20v.%20-%20geometrical%20and%20statistical%20methods%20of%20analysis%20of%20star%20configurations%20(2000)(300s).pdf)
+
+## Description:
 
 **WARNING: This program downloads 1.7Gb of ephemeris from NASA in its first run.** 
 more info: https://rhodesmill.org/skyfield/planets.html
@@ -46,15 +66,15 @@ cat catalogs/almagest.csv | ./sescc.py 0
 
 cat catalogs/almagest.csv | ./sescc.py 1
 
-### 3.Date New Chronology's 'informative kernel' by latitudes (longitudes):
+### 3.Date ("New Chronology"=NC) Fomenko, Kalashnikov, Nosovsky's 'informative kernel' by latitudes (longitudes):
 
 cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
-### 4.Date New Chronology's 'informative kernel' without Arcturus by latitudes (longitudes):
+### 4.Date NC 'informative kernel' without Arcturus by latitudes (longitudes):
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
 
-**NOTE**: "New Chronology's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars** that will give a late date. 
+**NOTE**: "NC's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars** that will give a late date. 
 Those stars where updated by later astronomers, Battani in 9th Cy, Regiomontanus in 15 cy.
 
 Dissection of "New Chronology's" "informative kernel":
@@ -63,7 +83,7 @@ Dissection of "New Chronology's" "informative kernel":
 + Arcturus: Al-Battani (9th century)
 + Regulus, Spica, Vega, Antares, Asellus: Hipparchus (-2nd century)
 
-"New Chronology's" dating is dominated by Arcturus due its much higher relative proper motion:
+Fomenko, Kalashnikov, Nosovsky's dating is dominated by Arcturus due its much higher relative proper motion:
 ![FKN kernel relative speeds.](plots/rel_speeds.png)
 
 "informative kernel" w/o Arcturus is dominated by Regiomontanus stars:
@@ -75,7 +95,7 @@ If this error is not admitted, it's just **scientific fraud in plain sight.**
 
 If admitted, an honest explanation be explored:
 
-The selection criteria looking for **bright and quick** stars **had an implicit and lethal risk**: that precisely those were most carefully tracked by later astronomers who of course **noticed the error and updated the catalog.**
+NC's selection criteria looking for **bright and quick** stars **had an implicit and lethal risk**: that precisely those were most carefully tracked by later astronomers who of course **noticed the error and updated the catalog.**
 
 Results indicate that this is what happened with al-Battani, who updated Arcturus in the 9th century, and Regiomontanus, who updated Procyon and Capella in the 15th.
 Those updates made their way into the canonical edition of the Almagest in the 15th century, by none other than Regiomontanus.
