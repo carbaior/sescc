@@ -74,7 +74,7 @@ cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
 
 cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
 
-**NOTE**: "NC's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars** that will give a late date. 
+**NOTE**: "NC's informative kernel" is the **WORST** set of stars to date the Almagest. It consists of a **selection of stars that will give a medieval date.**
 Those stars where updated by later astronomers, Battani in 9th Cy, Regiomontanus in 15 cy.
 
 Dissection of "New Chronology's" "informative kernel":
