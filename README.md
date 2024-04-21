@@ -16,7 +16,7 @@ sescc provides:
 + PROOF that the Almagest **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 2nd cy.
 + PROOF that the Almagest **LATITUDES were measured by Hipparchus** himself in -2nd cy.
 + PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
-+ PROOF that  *the other dating method(1)* that points to the medieval period are **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below)
++ PROOF that  *the other dating method(1)* that points to the medieval period is **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below)
 + PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary respositories, a great deal BEFORE the 11th century.
 
 ## Related research:
