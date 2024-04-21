@@ -1,6 +1,6 @@
 # sescc
 
-2024 Carlos Baiget Orts
+2024 Carlos Baiget Orts (cjbaiget)
 asinfreedom@gmail.com
 
 *"If a man will begin with certainties, he shall end in doubts; but if he will be content to begin with doubts, he shall end in certainties."* 
