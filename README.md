@@ -20,7 +20,7 @@ sescc is the **first and only method** to find the date of catalog by the speed/
 sescc provides:
 
 + reliably dating the Almagest by latitudes **or LONGITUDES.**
-+ reliably dating the Almagest by **TENS to HUNDREDS of its stars.**
++ reliably dating the Almagest by **arbitrary groups of TENS to HUNDREDS of its stars.**
 + PROOF that the Almagest **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 2nd cy.
 + PROOF that the Almagest **LATITUDES were measured by Hipparchus** himself in -2nd cy.
 + PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
