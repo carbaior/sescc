@@ -170,22 +170,3 @@ You can explore the effect of uncommenting those lines in the result.
 First line must be HIP35550 (Delta Geminorum), which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
 
 *************************************************************************************************************
-NOTA a los lectores de mi blog, el cual cerré sin previo aviso:
-
-Abrí el blog en 2018 para generar debate sobre un tema que captó mi interés.
-
-Nunca cumplió su objetivo: ni generó debate ni mantuvo mi interés.
-
-Su contenido no era entretenido y tampoco aportaba nada que no se pueda ver en otro lugar. 
-
-Haber dejado el contenido suponía hacer una revisión de todos los artículos, pues llegué a la conclusión de que debían tener errores, y dudé de lo que había asegurado. Como digo, es un trabajo que no se puede hacer sin el interés que requiere hacerlo.
-
-Mis pruebas astronómicas nunca fueron atendidas. Tan sólo recibí respuestas de fanáticos a mis conclusiones, personas que no tenían el más mínimo interés de comprobar nada, ni de rectificar nada. Mi frustración se hacía cada vez más evidente en el tono de mis publicaciones, y mis participaciones en los foros. Decidí evitar toda oportunidad de dejar un reflejo de lo que no soy. Por lo tanto, cerré mis cuentas en foros y así mismo cerré mi blog. Lo borré todo y con ello, cerré una etapa y comencé otra, la de limitarme de dejar constancia de mis aportaciones.
-
-Me habría despedido, pero no tenía de quién: nunca tuvo suscriptores y creo que más de la mitad de los que visitaban este blog habían acabado aquí por casualidad.
-
-Por supuesto es posible que alguien lo eche de menos, y le parezca extraño el cierre repentino, por eso dejo esta nota. No hay nada de extraño, yo no tenía presencia en internet antes de este hobby y quiero seguir sin tenerla después de él.
-
-Hice copia de esta nota en archive.org por si alguien llega allí buscando esta información, y lo borré. Sin embargo aparentemente no lo hice bien y guardé solo la entrada, no el blog. Ahora no la puedo encontrar.
-
-_"El problema con el mundo es que los tontos están seguros de todo y los inteligentes están llenos de dudas"._ Bertrand Russell. 
