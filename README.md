@@ -176,11 +176,11 @@ Abrí el blog en 2018 para generar debate sobre un tema que captó mi interés.
 
 Nunca cumplió su objetivo: ni generó debate ni mantuvo mi interés.
 
-Su contenido era un torro y no aportaba nada que no se pueda ver en otro lugar, haber dejado el contenido suponía hacer una revisión de todos los artículos, pues llegué a la conclusión de que debían tener errores, y dudé de lo que había asegurado.
+Su contenido no era entretenido y tampoco aportaba nada que no se pueda ver en otro lugar. 
 
-Como digo, es un trabajo que no se puede hacer sin el interés que requiere hacerlo.
+Haber dejado el contenido suponía hacer una revisión de todos los artículos, pues llegué a la conclusión de que debían tener errores, y dudé de lo que había asegurado. Como digo, es un trabajo que no se puede hacer sin el interés que requiere hacerlo.
 
-Así que lo borro todo y con ello, cierro una etapa.
+Mis pruebas astronómicas nunca fueron atendidas. Tan sólo recibí respuestas de fanáticos a mis conclusiones, personas que no tenían el más mínimo interés de comprobar nada, ni de rectificar nada. Mi frustración se hacía cada vez más evidente en el tono de mis publicaciones, y mis participaciones en los foros. Decidí evitar toda oportunidad de dejar un reflejo de lo que no soy. Por lo tanto, cerré mis cuentas en foros y así mismo cerré mi blog. Lo borré todo y con ello, cerré una etapa y comencé otra, la de limitarme de dejar constancia de mis aportaciones.
 
 Me habría despedido, pero no tenía de quién: nunca tuvo suscriptores y creo que más de la mitad de los que visitaban este blog habían acabado aquí por casualidad.
 
