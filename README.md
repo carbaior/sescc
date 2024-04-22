@@ -9,7 +9,7 @@ Francis Bacon, "The Advancement of Learning".
 
 I was content to begin with doubts, so here is sescc.
 
-## **sescc** settles ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
+## **sescc** aims to settle ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
 
 sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** (sescc for short)
 
