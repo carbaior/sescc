@@ -11,7 +11,10 @@ I was content to begin with doubts, so here is sescc.
 
 ## **sescc** aims to settle ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
 
-sescc stands for  **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** (sescc for short)
+sescc stands for:
+
+## **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** ##
+(sescc for short)
 
 sescc is a **generic method** for dating stellar catalogs compiled in ecliptical coordinates.
 
