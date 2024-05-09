@@ -61,25 +61,25 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
 
 ### 0. Install libraries:
 
-pip install pandas skyfield numpy
+`pip install pandas skyfield numpy`
  
 ### 1.Date Almagest by latitudes:
 
-cat catalogs/almagest.csv | ./sescc.py 0
+`cat catalogs/almagest.csv | ./sescc.py 0`
 
 (Load generated .csv file to spreadsheet, then graph a dispersion plot with the data.)
 
 ### 2.Date Almagest by longitudes:
 
-cat catalogs/almagest.csv | ./sescc.py 1
+`cat catalogs/almagest.csv | ./sescc.py 1`
 
-### 3.Date ("New Chronology"=NC) Fomenko, Kalashnikov, Nosovsky's 'informative kernel' by latitudes (longitudes):
+### 3.Date ("New Chronology"=NC) Fomenko, Kalashnikov, Nosovsky's 'informative kernel' by latitudes (use `./sescc.py 1` for longitudes):
 
-cat catalogs/fkn_kernel.csv | ./sescc.py 0 (1)
+`cat catalogs/fkn_kernel.csv | ./sescc.py 0`
 
-### 4.Date NC 'informative kernel' without Arcturus by latitudes (longitudes):
+### 4.Date NC 'informative kernel' without Arcturus by latitudes (`./sescc.py 1` for longitudes):
 
-cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0 (1)
+`cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0`
 
 ## Remarks regarding "New Chronology's informative kernel"
 
@@ -124,11 +124,11 @@ Clarifications:
 
 ### 1.Date Almagest by latitudes:
 
-python sescc.py < catalogs/almagest.csv
+`python sescc.py < catalogs/almagest.csv`
 
 ### 2.Date Almagest by longitudes:
 
-python sescc.py 1 < catalogs/almagest.csv
+`python sescc.py 1 < catalogs/almagest.csv`
 
 etc...
 
@@ -136,7 +136,7 @@ etc...
 
 Creates a catalog for any epoch, list of stars is taken from another catalog, example:
 
-cat catalogs/fkn_kernel.csv | ./stella.py 1100 10 0 0 | ./sescc.py
+`cat catalogs/fkn_kernel.csv | ./stella.py 1100 10 0 0 | ./sescc.py`
 
 This takes the list of stars detailed in 'fkn_kernel.csv' and creates a new catalog for year 1100, with 10' resolution (using the fractional system of the Almagest), with 0' of systemical error and 0' of random error.
 
