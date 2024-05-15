@@ -52,16 +52,16 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
 + https://numpy.org/
 + https://pandas.pydata.org/
 
-**What on earth is "Speed / Error Cross Correlation"?**
+**What on earth is "Speed / Error Signal Cross Correlation"?**
 
 Will explain with more detail soon.
 Briefly: 
 
 1. The working set is a list of stars. Each of those stars has proper motion. The **list of speeds** is a discrete signal, the 'speed signal' A.
 2. For every epoch, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
-3. But the speed of a star CANNOT be a source of its error in the catalog.
+3. But the speed of a star CANNOT be a source of its error in the catalog!
 
-**Therefore:*
+Therefore:
 
 When a *signal cross correlation* between A and B(t) appears is *necessarily* due to B being computed for a **wrong epoch t*.
 So: *date of the catalog is the date the minimal cross correlation.*
