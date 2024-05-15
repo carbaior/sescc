@@ -30,6 +30,7 @@ sescc provides:
 + Dating Ptolemy's star catalogue through proper motions: the Hipparchan epoch (https://adsabs.harvard.edu/full/2000JHA....31..115D)
 + Declinations int the Almagest: accuracy, epoch, and observers (https://www.narit.or.th/files/JAHH/2014JAHHvol17/2014JAHH...17..326B.pdf)
 + (1) Geometrical and statistical methods of analysis of star configurations : dating Ptolemy's Almagest (https://library.navoiy-uni.uz/files/fomenko%20a.%20t.,%20kalashnikov%20v.%20v.,%20nosovsky%20g.%20v.%20-%20geometrical%20and%20statistical%20methods%20of%20analysis%20of%20star%20configurations%20(2000)(300s).pdf)
++ The New Chronology of Fomenko and Nosovskyi ends today (=2024/4/15) (https://forum.chronologia.org/viewtopic.php?t=901)
 
 ## sescc description / usage:
 
