@@ -1,3 +1,5 @@
+_v20240515: Added option to date by random group of stars (more info below)_
+
 # sescc
 ## **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** ##
 (sescc for short)
@@ -50,6 +52,28 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
 + https://numpy.org/
 + https://pandas.pydata.org/
 
+**What on earth is "Speed / Error Cross Correlation"?**
+
+Will explain with more detail soon.
+Briefly: 
+
+1. The working set is a list of stars. Each of those stars has proper motion. The **list of speeds** is a discrete signal, the 'speed signal' A.
+2. For every epoch, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
+3. But the speed of a star CANNOT be a source of its error in the catalog.
+
+**Therefore:*
+
+When a *signal cross correlation* between A and B(t) appears is *necessarily* due to B being computed for a **wrong epoch t*.
+So: *date of the catalog is the date the minimal cross correlation.*
+
+**What on earth is "Shared reference in Delta Geminorum?"**
+
+1. We just don't know how accurate was the ancient astronomer determination of the (0,0) coordinate.
+2. We could use an almost static star near the ecliptic as a *shared reference* between the ancient astronomer and us, to **match** the ancient catalog with each of our computed ones.
+3. This star exists and was compiled in the catalog! It's _Delta Geminorum_ with a combined proper motion of only 18 mas/year.
+
+This shared reference is what allows dating the Almagest by longitudes.
+
 ## some results:
 
 ![Almagest dating by latitudes.](plots/alm_lat.png)
@@ -66,21 +90,36 @@ This program requires Python, Skyfield, Numpy and Panda libraries:
  
 ### 1.Date Almagest by latitudes:
 
-`cat catalogs/almagest.csv | ./sescc.py 0`
+`./sescc.py < catalogs/almagest.csv`
 
 (Load generated .csv file to spreadsheet, then graph a dispersion plot with the data.)
 
 ### 2.Date Almagest by longitudes:
 
-`cat catalogs/almagest.csv | ./sescc.py 1`
+`./sescc.py 1 < catalogs/almagest.csv`
 
 ### 3.Date ("New Chronology"=NC) Fomenko, Kalashnikov, Nosovsky's 'informative kernel' by latitudes (use `./sescc.py 1` for longitudes):
 
-`cat catalogs/fkn_kernel.csv | ./sescc.py 0`
+`./sescc.py < catalogs/fkn_kernel.csv`
 
 ### 4.Date NC 'informative kernel' without Arcturus by latitudes (`./sescc.py 1` for longitudes):
 
-`cat catalogs/fkn_wo_arcturus.csv | ./sescc.py 0`
+`./sescc.py < catalogs/fkn_wo_arcturus.csv`
+
+### 5.Dating based on a random group of stars:
+
+In the default setting, sescc will discard stars with mag>2.5 (brighter stars were measured first).
+This results in a set of 91 stars for dating the catalog.
+You may wonder if (as is the case with FKN method), the dating relies on a **single star** (see below).
+A set of 91 stars results in **2*10²⁴ combinations of 70 stars**. To date the catalog based on a random combination, you can use the following command.
+A few executions are enough to verify the typical outcome.
+
+`./sescc.py 0 70 < catalogs/almagest.csv`
+
+To expand de working set, set a higher magnitude. Maxmag = 3 gives a working set of 157 stars.
+So to date the catalog from one of its **2*10⁴¹ combinations of 50 stars** you can use this command:
+
+`./sescc.py 0 50 3 < catalogs/almagest.csv`
 
 ## Remarks regarding "New Chronology's informative kernel"
 
@@ -143,7 +182,31 @@ This takes the list of stars detailed in 'fkn_kernel.csv' and creates a new cata
 
 You can feed the output to sescc.py to verify it works as expected. stella.py can also be used to prove that sescc.py doesn't date the longitudes by their magnitude. Magnitudes can be adjusted for the axial precession of any other epoch and the results will be the same.
 
-An example of this modification is the catalog 'almagest_fake_longs.csv', where longitudes are increased by 15º
+An example of this modification is the catalog 'almagest_fake_longs.csv' where **longitudes are increased by 15º, not affecting the dating of the catalog by longitudes**:
+
+`./sescc.py 1 < catalogs/almagest_fake_longs.csv`
+
+gives the same dating as:
+
+`./sescc.py 1 < catalogs/almagest.csv`
+
+`
+$ tail -n5 catalogs/almagest_fake_longs.csv
+105382;-22.17;281.17
+106327;-21.17;284.0
+105696;-20.83;282.0
+102831;-17.0;283.83
+103738;-14.83;283.83
+
+$ tail -n5 catalogs/almagest_fake_longs.csv
+105382;-22.17;296.17
+106327;-21.17;299.0
+105696;-20.83;297.0
+102831;-17.0;298.83
+103738;-14.83;298.83
+`
+
+
 
 ## catalogs:
 
