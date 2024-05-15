@@ -1,25 +1,29 @@
 #!/usr/bin/python3
 
-import csv, sys, math
+#sescc is a program to date ancient catalogs compiled in ecliptical coordinates
+#copyleft 2024 Carlos Baiget Orts (asinfreedom@gmail.com)
+#https://github.com/carbaior/sescc
+
+import csv, sys, math, random
 import numpy as np
 from skyfield.api import Star, load
 from skyfield.data import hipparcos
 from operator import itemgetter
 
-maxmag = 3 
+maxmag = 2.6 
 filtro = 0
 dsource = 0
 n = len(sys.argv)
 
 def error():
-	print ("Usage: "+sys.argv[0]+" [DATING_SOURCE] [SPEED_FILTER] [MAX_MAGNITUDE] ")
+	print ("Usage: "+sys.argv[0]+" [DATING_SOURCE] [RANDOM_GROUP] [MAX_MAGNITUDE] ")
 	print ()
 	print ("Dating Source: 0-latitudes, 1-longitudes. (default: 0)")
-	print ("Magnitude: exclude stars whose magnitude > MAX_MAGNITUDE. (default: 3)")
-	print ("Speed filter: date catalog using only the SPEED_FILTER stars. (default: no filter)")
+	print ("Magnitude: exclude stars whose magnitude < MAX_MAGNITUDE. (default: 2.6)")
+	print ("Random Group: date catalog using a random group of stars of RANDOM_GROUP size  (default: all stars)")
 	print ("Examples:")
-	print (sys.argv[0]+" 0 20")
-	print (sys.argv[0]+" 1 20 4")
+	print (sys.argv[0]+" 0 70")
+	print (sys.argv[0]+" 1 70 3")
 	exit(0)
 
 if n>1:
@@ -28,7 +32,7 @@ if n>1:
 		error()
 if n>2:
 	filtro = int(sys.argv[2])
-	if filtro < 2:
+	if filtro < 0:
 		error()
 if n>3:
 	maxmag = float(sys.argv[3])
@@ -101,8 +105,12 @@ for i in range(0,len(estrellas)):
 	pos = int(estrellas[i][dsource+1] * 1000)
 	try:
 		vel=abs(pmotion(hip)[dsource])
+		#faster stars were more likely to had its position updated by later astronomers
+		#if you want those stars to be discarded, uncomment the following two lines:
+		#if vel>100:
+		#	continue
 	except ValueError:
-		print(f"Not able to compute longitudinal proper motion of star: HIP{hip}")
+		print(f"Not able to compute proper motion of star: HIP{hip}")
 		continue
 	try:
 		mag = hip_mag[hip]
@@ -120,18 +128,17 @@ print (f"Max. Magnitude: {maxmag}")
 if filtro!=0:
 	#saco la referencia para ordenar la lista (la referencia ha de estar en primera posicion)
 	referencia=almagest.pop(0)
-	almagest = sorted(almagest, key=itemgetter(1),reverse=True)
+	#almagest = sorted(almagest, key=itemgetter(1),reverse=True)
+	random.shuffle(almagest)
 	almagest = almagest[:filtro]
 	#vuelvo a colocar la referencia en primera posicion
 	almagest.insert(0,referencia)
-	print ("Speed filter ON")
-	filtro = "fastest & "
-else:
-	filtro = ""
+	filtro=str(filtro)
+	print ("Random group of "+filtro+" stars")
 
 n = len(almagest)
 src='latitudes' if dsource==0 else 'longitudes'
-print(f"Dating the {n} "+filtro+f"brightest stars of the catalog by {src}")
+print(f"Dating by {src} {n-1} stars of the catalog.")
 
 #calcular posiciones
 for i in range(n):
@@ -184,9 +191,11 @@ print (f"Output in {filename}")
 print ()
 
 #Uncomment to print working set: HIP star, ProperMotion, Magnitude
-"""
+print("Working set:")
+print()
+print(" HIP_code    ProperMotion")
 almagest = sorted(almagest, key=itemgetter(1),reverse=True)
-for elem in almagest:
-	print (elem[0],elem[1],elem[2])
-"""
 
+for row in almagest:
+    aux=[row[0],row[1]]		
+    print("{: >8} {: >8}".format(*aux))
