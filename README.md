@@ -191,7 +191,8 @@ gives the same dating as:
 
 `./sescc.py 1 < catalogs/almagest.csv`
 
-`
+
+```
 $ tail -n5 catalogs/almagest_fake_longs.csv
 105382;-22.17;281.17
 106327;-21.17;284.0
@@ -205,9 +206,7 @@ $ tail -n5 catalogs/almagest_fake_longs.csv
 105696;-20.83;297.0
 102831;-17.0;298.83
 103738;-14.83;298.83
-`
-
-
+```
 
 ## catalogs:
 
