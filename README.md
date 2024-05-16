@@ -58,7 +58,7 @@ Will explain with more detail soon.
 Briefly: 
 
 1. The working set is a list of stars. Each of those stars has proper motion. The **list of speeds** is a discrete signal, the 'speed signal' A.
-2. For every epoch, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
+2. For every epoch t, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
 3. But the speed of a star CANNOT be a source of its error in the catalog!
 
 Therefore:
