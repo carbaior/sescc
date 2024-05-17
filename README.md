@@ -63,13 +63,13 @@ Briefly:
 
 Fig 1. Example of the speed signal A of a catalog.
    
-3. For every epoch t, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
+2. For every epoch t, the difference of the stars positions in the catalog and the computed positions for that epoch defines a **list of errors**, that is the 'error signal' B(t).
 
 ![error signals example.](plots/error_signals.png)
 
 Fig 2. Example of the set of errors signals B(t) of a catalog. Each color is the error signal associated with a candidate epoch t.
 
-4. But the speed of a star CANNOT be a source of its error in the catalog!
+3. But the speed of a star CANNOT be a source of its error in the catalog!
 
 Therefore:
 
