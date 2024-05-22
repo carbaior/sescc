@@ -1,3 +1,4 @@
+_v20240522: Plot generation with Matplotlib_
 _v20240515: Added option to date by random group of stars (more info below)_
 
 # sescc
@@ -45,11 +46,12 @@ This is the sescc dating program, you can use it to **SCIENTIFICALLY PROVE** tha
 
 sescc can reliably date the Almagest by latitudes or longitudes, as well as any other catalog compiled in ecliptic coordinates, between -1500 and 1900 C.E.
 
-This program requires Python, Skyfield, Numpy and Panda libraries:
+This program requires Python, Skyfield, Numpy, Matplotlib and Panda libraries:
 
 + https://www.python.org/
 + https://rhodesmill.org/skyfield/
 + https://numpy.org/
++ https://matplotlib.org/
 + https://pandas.pydata.org/
 
 **What on earth is "Speed / Error Signal Cross Correlation"?**
@@ -97,13 +99,11 @@ This shared reference is what allows dating the Almagest by longitudes.
 
 ### 0. Install libraries:
 
-`pip install pandas skyfield numpy`
+`pip install pandas skyfield numpy matplotlib`
  
 ### 1.Date Almagest by latitudes:
 
 `./sescc.py < catalogs/almagest.csv`
-
-(Load generated .csv file to spreadsheet, then graph a dispersion plot with the data.)
 
 ### 2.Date Almagest by longitudes:
 
