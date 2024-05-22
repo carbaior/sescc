@@ -122,7 +122,7 @@ This shared reference is what allows dating the Almagest by longitudes.
 In the default setting, sescc will discard stars with mag>2.5 (brighter stars were measured first).
 This results in a set of 91 stars for dating the catalog.
 You may wonder if (as is the case with FKN method), the dating relies on a **single star** (see below).
-A set of 91 stars results in **2*10²⁴ combinations of 70 stars**. To date the catalog based on a random combination, you can use the following command.
+A set of 91 stars results in **2*10²⁰ combinations of 70 stars**. To date the catalog based on a random combination, you can use the following command.
 A few executions are enough to verify the typical outcome.
 
 `./sescc.py 0 70 < catalogs/almagest.csv`
