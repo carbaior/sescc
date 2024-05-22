@@ -6,6 +6,7 @@
 
 import csv, sys, math, random
 import numpy as np
+import matplotlib.pyplot as plt
 from skyfield.api import Star, load
 from skyfield.data import hipparcos
 from operator import itemgetter
@@ -199,3 +200,17 @@ almagest = sorted(almagest, key=itemgetter(1),reverse=True)
 for row in almagest:
     aux=[row[0],row[1]]		
     print("{: >8} {: >8}".format(*aux))
+
+# Plot:
+x = year_corr[:, 0]
+y = year_corr[:, 1]
+plt.figure(figsize=(12, 8))
+color='blue' if dsource==0 else 'green'
+plt.plot(x, y, color=color)
+plt.ylim(0,1000)
+plt.yticks([])
+plt.xlabel('Year')
+plt.xticks(range(int(min(x)), int(max(x))+1, 100), rotation=45)
+plt.title("Almagest SESCC dating by "+src.upper())
+plt.grid(True)
+plt.show()
