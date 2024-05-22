@@ -74,11 +74,11 @@ Fig 2. Example of the set of errors signals B(t) of a catalog. Each color is the
 
 3. But the speed of a star CANNOT be a source of its error in the catalog!
 
-Therefore:
+**THEREFORE:**
 
 When a **signal cross correlation** between A and B(t) appears is **necessarily** due to B being computed for a **wrong epoch t**.
 
-Meaning: **date of the catalog is the date the minimal cross correlation.**
+Meaning: **date of the catalog is the date of the minimal cross correlation.**
 
 **What on earth is "Shared reference in Delta Geminorum?"**
 
