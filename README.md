@@ -127,6 +127,22 @@ A few executions are enough to verify the typical outcome.
 
 `./sescc.py 0 70 < catalogs/almagest.csv`
 
+Here's a 1000 iterations plot of this example:
+
+![latitudes_1000_interations_lats.](plots/lats_1000_n70.png)
+
+And the corresponding histogram:
+
+![latitudes_1000_interations_lats_histogram.](plots/lats_1000_n70_hist.png)
+
+Repeating the same experiment with longitudes:
+
+![longitudes_1000_interations_lats.](plots/longs_1000_n70.png)
+![longitudes_1000_interations_lats_histogram.](plots/longs_1000_n70_hist.png)
+
+It seems that later astronomers frequently re-measured longitudes more often than latitudes.
+Probably they were interested in determining precession accurately.
+
 To expand de working set, set a higher magnitude. Maxmag = 3 gives a working set of 157 stars.
 So to date the catalog from one of its **2*10⁴¹ combinations of 50 stars** you can use this command:
 
