@@ -13,6 +13,18 @@ def eclatlon(hip,year):
 	lat, lon, distance = apparent.ecliptic_latlon(tt)
 	return lat.degrees,lon.degrees
 
+def to_frac(num):
+	fracciones = [0, 1/6, 1/5, 1/3, 2/5, 1/2, 3/5, 2/3, 4/5, 5/6, 1]
+	signo = -1 if num < 0 else 1
+	num=abs(num)
+	entera = int(num)
+	decimal = num - entera
+	fraccion = min(fracciones, key=lambda x: abs(decimal - x))
+	if fraccion == 1:
+		entera += 1
+		raccion = 0
+	return signo*(entera + fraccion)
+
 with load.open(hipparcos.URL) as f:
     df = hipparcos.load_dataframe(f)
 
@@ -33,7 +45,7 @@ rnderror = 0
 if n>1:
 	year = int(sys.argv[1])
 if n>2:
-	precision = int(sys.argv[2]) / 60
+	precision = int(sys.argv[2])
 if n>3:
 	syserror = float(sys.argv[3])
 if n>4:
@@ -42,7 +54,7 @@ if n==1 or n>5:
 	print ("Usage: "+sys.argv[0]+" <YEAR> [RESOLUTION] [SYSTEMATIC ERROR] [RANDOM_ERROR]")
 	print ()
 	print ("Year: from -1900 to 1900. 0 = same as input")
-	print ("Resolution: in arcminutes. 0 = max available.")
+	print ("Resolution: 0 = max available, <>0 = almagest's fractional system.")
 	print ("Systematic error: in arcminutes (example: -10). 0 for no error")
 	print ("Random error interval (normal): in arcminutes (example: 10). 0 for no error")
 	exit(0)
@@ -57,32 +69,25 @@ for i in range(0,len(estrellas)):
 	else:
 		lat=estrellas[i][1]
 		lon=estrellas[i][2]
-	lat+=syserror/60
-	lon+=syserror/60
+	
+	if syserror!=0:
+		lat+=syserror/60
+		lon+=syserror/60
 	
 	if lat>=360:
 		lat-=360
 	if lon>=360:
 		lon-=360
+	
 
 	if rnderror!=0:
 		rg=rnderror/2
 		lat+=random.normalvariate(0, rg/3)/60
 		lon+=random.normalvariate(0, rg/3)/60
+
 	if precision!=0:
-		lats = round(round (lat / precision) * precision,3)
-		lons = round(round (lon / precision) * precision,3)
-		latq = round(round (lat / 0.25) * 0.25,3)
-		lonq = round(round (lon / 0.25) * 0.25,3)
-		if abs(lat-lats)<abs(lat-latq):
-			lat=lats
-		else:
-			lat=latq
-		if abs(lon-lons)<abs(lon-lonq):
-			lon=lons
-		else:
-			lon=lonq	
-	print (str(hip)+";"+str(round(lat,2))+";"+str(round(lon,2)))
-	
-	
-	
+		#convert to almagest's fractional system
+		lat=to_frac(lat)
+		lon=to_frac(lon)
+	print (str(hip)+";"+str(round(lat,3))+";"+str(round(lon,3)))
+		
