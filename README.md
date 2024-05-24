@@ -172,7 +172,7 @@ If this error is not admitted, it's just **scientific fraud in plain sight.**
 
 If admitted, an honest explanation be explored:
 
-NC's selection criteria looking for **bright and quick** stars **had an implicit and lethal risk**: that precisely those were most carefully tracked by later astronomers who of course **noticed the error and updated the catalog.**
+NC's selection criteria looking for **bright and quick** stars **had an implicit and lethal risk**: that precisely those were most carefully tracked by later astronomers who of course **noticed the error in their own times and updated the catalog.**
 
 Results indicate that this is what happened with al-Battani, who updated Arcturus in the 9th century, and Regiomontanus, who updated Procyon and Capella in the 15th.
 Those updates made their way into the canonical edition of the Almagest in the 15th century, by none other than Regiomontanus.
