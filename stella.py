@@ -14,7 +14,7 @@ def eclatlon(hip,year):
 	return lat.degrees,lon.degrees
 
 def to_frac(num):
-	fracciones = [0, 1/6, 1/5, 1/3, 2/5, 1/2, 3/5, 2/3, 4/5, 5/6, 1]
+	fracciones = [0, 1/6, 1/4, 2/6, 1/2, 4/6, 3/4, 5/6, 1]
 	signo = -1 if num < 0 else 1
 	num=abs(num)
 	entera = int(num)
