@@ -1,3 +1,5 @@
+_v20240529: New section in README.md: "A New Understanding of the Almagest"_
+
 _v20240522: Plot generation with Matplotlib_
 
 _v20240515: Added option to date by random group of stars (more info below)_
@@ -253,5 +255,26 @@ HIP97649 - Altair
 You can explore the effect of uncommenting those lines in the result.
 
 First line **must** be HIP35550 (Delta Geminorum), which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
+
+## A New Understanding of the Almagest
+
+A series of experiments derived from this dating method allow us to propose a new hypothesis about the history of the Almagest, which explains some of its most enigmatic peculiarities. Unfortunately, due to lack of time, I cannot document these investigations properly. However, I am leaving the conclusions here so they do not fall into complete oblivion in case I finally do not find the time or motivation to do so.
+
+The strange characteristics of the Almagest's star catalog led to the hypothesis of forgery long ago. R.R. Newton proposed that Ptolemy, in a sort of scientific fraud, simply copied Hipparchus's catalog and merely adjusted the longitudes based on precession. A.T. Fomenko argues that the catalog was compiled around the 10th century and medieval reformers adjusted the longitudes a millennium into the past to support a falsified chronology.
+
+Dating by sessc resolves the apparent inconsistency of the Almagest's star positions, while also proposing a reasonable history that explains the content that has come down to us and that has given rise to previous hypotheses. It is an interesting story among other things because, despite the unanimous opinion that Hipparchus's catalog was completely lost, sessc dating shows that this is not the case.
+
+The solution is as follows. In the time of Hipparchus and his immediate predecessors, the first star catalog was compiled with the ambition to record stellar positions with sufficient fidelity to be compared by later astronomers. However, their measuring instruments were somewhat rudimentary and **only allowed a resolution of 1/4 degree**. The first novel conclusion is that **the positions in the Almagest recorded in quarters of a degree belong to Hipparchus's original catalog**. Since the fractions of 0 and 1/2 degree can correspond to both a system of measurement based on quarters and on sixths of a degree, in an initial analysis we can only certify Hipparchus's positions as those detailed with 1/4 or 3/4 of a degree.
+
+Astronomers following Ptolemy measured in sixths of a degree, and when they corrected some position, they did so using this system. **Ptolemy compared his accurate positions with those vague inherited from Hipparchus and obtained an aberrant value for precession.**
+
+Fortunately for us, Ptolemy and his successors were not interested in latitudes, as they considered them perennial. They were much more interested in longitudes, to be able to accurately determine the value of precession. Accordingly, Ptolemy measured practically all the longitudes in the catalog himself, but simply copied Hipparchus's latitudes. This is why sessc dating by latitudes gives us Hipparchus's era, but by longitudes, it gives us Ptolemy's.
+
+After that, **the catalog continued to be updated and expanded over the centuries**. The two main occasions when this happened were in the 9th century by al-Battani and the 15th century by Regiomontanus. For some prominent and very fast stars, like Arcturus, the change in position relative to Hipparchus was very evident in the 9th century, and their latitudinal position was corrected. This correction likely attributed to an ancient measurement error by Hipparchus, as a complete revision of latitudes was not carried out to solve the question of the existence of proper motion of the stars. However, this specific correction had disastrous repercussions when A.T. Fomenko based the dating of the entire catalog on it, under the clearly erroneous premise that it was a measurement corresponding to the original catalog of Hipparchus or Ptolemy. The latitude of other relevant stars, despite not being fast, was corrected in the 15th century by Regiomontanus.
+
+Clearly, **the Almagest catalog that has come down to us is a series of additions with a fundamental core of latitudes due to Hipparchus and another of longitudes due to Ptolemy**. The latitudes corrected later were few, as it was considered of little benefit to do so. The longitudes, on the other hand, suffered few updates after Ptolemy. However, when new stars were added, since the value of the longitude implies a specific era, it was harmonized with the era it should have had in Ptolemy's time, by means of an adjustment due to precession. This is why all the longitudes in the catalog 'appear' to be from Ptolemy's era, and **it also explains the vestiges of positional calculation and large errors, since many stars have the longitude that corresponds to the latitude of 300 years earlier, if not a millennium (longitude of al-Battani in the 9th century and latitude of Hipparchus in the 2nd century BC)**. However, **this was not a fraud** but an attempt by medieval astronomers to compile a coherent catalog.
+
+Of the latitudinal positions with fractional values of 0 or 1/2, many of them belong to Hipparchus's original catalog. However, determining this requires a combinatorial approach to the problem, which can generate millions of datings of small groups, and I am not sure how viable it is. But I believe that at least for the brighter stars it is possible, and I would like to attempt this classification as soon as time allows.
+
 
 *************************************************************************************************************
