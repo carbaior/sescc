@@ -241,8 +241,8 @@ $ tail -n5 catalogs/almagest_fake_longs.csv
 
 ## catalogs:
 
-Format:
-star_HIPPARCOS_ code ; latitude ; longitude; HR code; HD code; name; Almagest number
+Format of 'almagest.csv' (data adapted from _G. J. Toomer, Ptolemy’s Almagest , (London, 1984)_):
+Star_HIPPARCOS_ code ; Latitude in Almagest ; Longitude in Almagest; HR code; HD code; name; Almagest number
 
 '0;' before star code means a reject, which will be ignored when loading catalog
 
