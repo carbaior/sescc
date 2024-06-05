@@ -1,3 +1,5 @@
+_v20240605: Updated catalog.csv to ease checking its contents: column description, HR code, HD code, star name, Almagest number_
+
 _v20240529: New section in README.md: "A New Understanding of the Almagest"_
 
 _v20240522: Plot generation with Matplotlib_
@@ -240,7 +242,7 @@ $ tail -n5 catalogs/almagest_fake_longs.csv
 ## catalogs:
 
 Format:
-star_HIPPARCOS_ code ; latitude ; longitude
+star_HIPPARCOS_ code ; latitude ; longitude; HR code; HD code; name; Almagest number
 
 '0;' before star code means a reject, which will be ignored when loading catalog
 
