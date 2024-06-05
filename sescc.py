@@ -92,16 +92,16 @@ hip_mag = dict(hip_mag)
 estrellas = list(csv.reader(sys.stdin, delimiter=';', quoting=csv.QUOTE_NONNUMERIC))
 print()
 almagest=[]
-for i in range(0,len(estrellas)):
+for i in range(1,len(estrellas)):
 	print("Loading catalog ("+str(int(100*i/len(estrellas)))+"%)", end="\r")
 	hip = int(estrellas[i][0])
 	if hip==0:
-		hip = int(estrellas[i][1])
-		if hip==0:
-			continue
-		print()
-		print (f"HIP{hip} excluded")
-		print()
+		hip = estrellas[i][1]
+		if hip!="":
+			hip = int(estrellas[i][1])
+			print()
+			print (f"HIP{hip} excluded")
+			print()
 		continue
 	pos = int(estrellas[i][dsource+1] * 1000)
 	try:
