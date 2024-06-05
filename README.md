@@ -29,7 +29,7 @@ sescc provides:
 
 ## Related research / background:
 
-+ Dating the Almagest star catalogue using proper motions: a reconsideration (https://people.sc.fsu.edu/~dduke/pmotion.pdf)
++ Dating the Almagest star catalogue using proper motions: a reconsideration ([https://people.sc.fsu.edu/~dduke/pmotion.pdf](https://web.archive.org/web/20210918113629/https://people.sc.fsu.edu/~dduke/pmotion.pdf))
 + On the Origin of the Ptolemaic Star Catalogue, parts 1 & 2 (https://adsabs.harvard.edu/full/1987JHA....18..155E) (https://adsabs.harvard.edu/full/1987JHA....18..233E)
 + The enigma of Ptolemy's catalogue of stars (https://adsabs.harvard.edu/full/1992JHA....23..173S)
 + The dating of Ptolemy's Star Catalogue (https://adsabs.harvard.edu/full/2002JHA....33..265D)
