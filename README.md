@@ -84,7 +84,10 @@ Fig 2. Example of the set of errors signals B(t) of a catalog. Each color is the
 
 When a **signal cross correlation** between A and B(t) appears is **necessarily** due to B being computed for a **wrong epoch t**.
 
-Meaning: **date of the catalog is the date of the minimal cross correlation between the speed and error signals.**
+**MEANING:**
+``` diff
+- DATE OF THE CATALOG IS THE DATE OF THE MINIMAL CROSS CORRELATION BETWEEN THE SPEED AND ERROR SIGNALS.
+```
  
 **What on earth is "Shared reference in Delta Geminorum?"**
 
