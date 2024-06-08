@@ -1,3 +1,5 @@
+_v20240608: Added code comments_
+
 _v20240605: Updated catalog.csv to ease checking its contents: column description, HR code, HD code, star name, Almagest number_
 
 _v20240529: New section in README.md: "A New Understanding of the Almagest"_
