@@ -219,7 +219,7 @@ This takes the list of stars detailed in 'fkn_kernel.csv' and creates a new cata
 
 You can feed the output to sescc.py to verify it works as expected. stella.py can also be used to prove that sescc.py doesn't date the longitudes by their magnitude. Magnitudes can be adjusted for the axial precession of any other epoch and the results will be the same.
 
-An example of this modification is the catalog 'almagest_fake_longs.csv' where **longitudes are increased by 15º, not affecting the dating of the catalog by longitudes**:
+An example of this modification is the catalog 'almagest_fake_longs.csv' where **longitudes are increased by 15º (+1000 years into the future), not affecting the dating of the catalog by longitudes**:
 
 `./sescc.py 1 < catalogs/almagest_fake_longs.csv`
 
