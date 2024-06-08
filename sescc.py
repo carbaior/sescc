@@ -162,7 +162,6 @@ for i in range(1,n):
 		if almagest[i][t+2]<0:
 			almagest[i][t+2]+=360000
 
-almagest.pop(0)
 almagest=np.array(almagest,dtype='int32')
 
 #stars velocities:
