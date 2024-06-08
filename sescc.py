@@ -1,7 +1,7 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 #sescc is a program to date ancient catalogs compiled in ecliptical coordinates
-#copyleft 2024 Carlos Baiget Orts (asinfreedom@gmail.com)
+#copyleft (GPLv3) 2024 Carlos Baiget Orts (asinfreedom@gmail.com)
 #https://github.com/carbaior/sescc
 
 import csv, sys, math, random
@@ -11,6 +11,7 @@ from skyfield.api import Star, load
 from skyfield.data import hipparcos
 from operator import itemgetter
 
+#defaults:
 maxmag = 2.6 
 filtro = 0
 dsource = 0
@@ -42,9 +43,10 @@ if n>4:
 
 siglos=30 #centuries to scan into the past
 resolucion=25 #every # years (10 = every decade)
-maxt=siglos*100//resolucion #*resolucion #number of iteration
-fechamax=1900 #from year
+maxt=siglos*100//resolucion #number of iterations
+fechamax=1900 #from year 'fechamax' to the past
 
+#return ecliptical coordinates (lat,lon) for a star on an epoch t
 def ecpos(hip,t):
 	hip=int(hip)
 	S = Star.from_dataframe(df.loc[hip])
@@ -52,7 +54,9 @@ def ecpos(hip,t):
 	apparent=earth.at(tt).observe(S).apparent()
 	lat, lon, distance = apparent.ecliptic_latlon(tt)
 	return lat.degrees, lon.degrees
-	
+
+#compute proper motion of a star
+#(not used to compare stars, so no need to adjust longitudinal speeds to latitude.)
 def pmotion(hip):
 	S = Star.from_dataframe(df.loc[hip])
 	t2 = ts.utc(1000,1,1)
@@ -65,14 +69,17 @@ def pmotion(hip):
 	vlon=round((lon2.degrees-lon1.degrees)*1000)
 	return (vlat,vlon)
 
-with load.open(hipparcos.URL) as f:
-    df = hipparcos.load_dataframe(f)
-
+#load JPL ephemeris files:
 #Warning: Downloads 1.5Gb! more info: https://rhodesmill.org/skyfield/planets.html
 planets = load('https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de441_part-1.bsp') 
 earth = planets['earth']
 ts = load.timescale()
 
+#load Hipparcos star database:
+with load.open(hipparcos.URL) as f:
+    df = hipparcos.load_dataframe(f)
+
+#load magnitude for each star from Hipparcos database:
 hip_mag = []
 file = open("./hip_main.dat", "r")
 for line in file:
@@ -88,7 +95,9 @@ for line in file:
 	except:
 		continue
 file.close()
-hip_mag = dict(hip_mag)		
+hip_mag = dict(hip_mag)
+
+#load catalog to be dated from stdin:		
 estrellas = list(csv.reader(sys.stdin, delimiter=';', quoting=csv.QUOTE_NONNUMERIC))
 print()
 almagest=[]
@@ -107,7 +116,7 @@ for i in range(1,len(estrellas)):
 	try:
 		vel=abs(pmotion(hip)[dsource])
 		#faster stars were more likely to had its position updated by later astronomers
-		#if you want those stars to be discarded, uncomment the following two lines:
+		#if you want those stars to be discarded, uncomment the following two lines (try your own values):
 		#if vel>100:
 		#	continue
 	except ValueError:
@@ -126,13 +135,11 @@ print("Loading catalog (100%)",end="\r")
 print()
 print (f"Max. Magnitude: {maxmag}")
 
+#option to date the catalog from a random group of stars:
 if filtro!=0:
-	#saco la referencia para ordenar la lista (la referencia ha de estar en primera posicion)
 	referencia=almagest.pop(0)
-	#almagest = sorted(almagest, key=itemgetter(1),reverse=True)
 	random.shuffle(almagest)
 	almagest = almagest[:filtro]
-	#vuelvo a colocar la referencia en primera posicion
 	almagest.insert(0,referencia)
 	filtro=str(filtro)
 	print ("Random group of "+filtro+" stars")
@@ -141,13 +148,13 @@ n = len(almagest)
 src='latitudes' if dsource==0 else 'longitudes'
 print(f"Dating by {src} {n-1} stars of the catalog.")
 
-#calcular posiciones
+#compute past position of each star on each epoch:
 for i in range(n):
 	print("Computing past positions ("+str(int(100*i/n))+"%)", end="\r")
 	for t in range(maxt):
 		almagest[i].append(round(ecpos(almagest[i][0],t)[dsource]*1000))
 
-#ajustar posiciones a la referencia (almagest[0][t+2])
+#adjust each position to the shared reference:
 for i in range(1,n):
 	print("Computing past positions ("+str(int(100*i/n))+"%)", end="\r")
 	for t in range(maxt+1):
@@ -157,29 +164,26 @@ for i in range(1,n):
 
 almagest.pop(0)
 almagest=np.array(almagest,dtype='int32')
-distancias=[]
-a = math.comb(n,2)
+
+#stars velocities:
 velocidades_catalogo=almagest[:,1]
+#stars positions in the catalog:
 posiciones_catalogo=almagest[:,2]
 
-#scc:
+#compute the speed/error signals cross correlation (scc) for each epoch:
+#SCC:
 year_corr=[]
-def coef_epocas():
-	global velocidades_catalogo
-	for t in range(maxt-1,-1,-1):
-		year_corr.append([fechamax-t*resolucion,np.correlate(velocidades_catalogo,np.abs(np.subtract(posiciones_catalogo,almagest[:,t+3])))[0],t])
-#/scc!
+for t in range(maxt-1,-1,-1):
+	year_corr.append([fechamax-t*resolucion,np.correlate(velocidades_catalogo,np.abs(np.subtract(posiciones_catalogo,almagest[:,t+3])))[0],t])
+#/SCC!
 
-coef_epocas()
+#normalize correlation values, between 0 y 1000:
 year_corr=np.array(year_corr,dtype='int64')
 corrmin = np.min(year_corr[:,1])
 corrmax = np.max(year_corr[:,1])
-pos_corrmin = np.argmin(year_corr[:,1])
-e=year_corr[pos_corrmin][2]
-
-#normalizar valores de correlacion entre 0 y 1000:
 year_corr[:, 1] = ((year_corr[:, 1] - corrmin) / (corrmax - corrmin)) * 1000
 
+#save results
 filename="sescc_dating_"+src+".csv"
 
 f = open(filename, "w")
@@ -191,7 +195,8 @@ print ()
 print (f"Output in {filename}")
 print ()
 
-#Uncomment to print working set: HIP star, ProperMotion, Magnitude
+#Uncomment this block to print working set: HIP star, ProperMotion, Magnitude:
+"""
 print("Working set:")
 print()
 print(" HIP_code    ProperMotion")
@@ -200,8 +205,9 @@ almagest = sorted(almagest, key=itemgetter(1),reverse=True)
 for row in almagest:
     aux=[row[0],row[1]]		
     print("{: >8} {: >8}".format(*aux))
+"""
 
-# Plot:
+# Plot results:
 x = year_corr[:, 0]
 y = year_corr[:, 1]
 plt.figure(figsize=(12, 8))
