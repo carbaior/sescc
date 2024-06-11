@@ -25,7 +25,7 @@ sescc provides:
 
 + reliably dating the Almagest by latitudes **or LONGITUDES.**
 + reliably dating the Almagest by **arbitrary groups of TENS to HUNDREDS of its stars.**
-+ PROOF that the Almagest's **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 2nd cy.
++ PROOF that the Almagest's **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 1st-2nd cy CE. 
 + PROOF that the Almagest's **LATITUDES were measured by Hipparchus** himself in -2nd cy.
 + PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
 + PROOF that Fomenko,Kalashnikov & Nosovsky's method(1) that points to the medieval period is **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below).
