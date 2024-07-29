@@ -109,7 +109,7 @@ This shared reference is what allows dating the Almagest by longitudes.
 
 ### 0. Install libraries:
 
-`pip install pandas skyfield numpy==1.26.4 matplotlib`
+`pip install pandas skyfield "numpy<2.0" matplotlib`
  
 ### 1.Date Almagest by latitudes:
 
