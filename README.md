@@ -14,6 +14,7 @@ _v20240515: Added option to date by random group of stars (more info below)_
 
 2024 Carlos Baiget Orts (cjbaiget)
 asinfreedom@gmail.com
+https://www.youtube.com/@CarlosBaiget
 
 ## **sescc** aims to settle ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
 
