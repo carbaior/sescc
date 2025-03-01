@@ -1,12 +1,3 @@
-_v20240608: Added code comments_
-
-_v20240605: Updated almagest.csv to ease checking its contents: column description, HR code, HD code, star name, Almagest number_
-
-_v20240529: New section in README.md: "A New Understanding of the Almagest"_
-
-_v20240522: Plot generation with Matplotlib_
-
-_v20240515: Added option to date by random group of stars (more info below)_
 
 # sescc
 ## **Speed/Error Signal Cross Correlation and Shared Reference in Delta Geminorum** ##
@@ -18,21 +9,13 @@ asinfreedom@gmail.com
 
 https://www.youtube.com/@CarlosBaiget
 
-## **sescc** aims to settle ONCE AND FOREVER the EXACT <ins>astronomical dating</ins> of Ptolemy's Almagest
+## **sescc** is at tool for the  <ins>astronomical dating</ins> of Ptolemy's Almagest
 
 sescc is a **generic method** for dating stellar catalogs compiled in ecliptical coordinates.
 
-sescc is the **first and only method** to find the date of catalog by the speed/error correlation of the stars and uses an static star for frame reference.
+sescc finds the date of catalog by the speed/error correlation of the stars and uses an static star for frame reference.
 
-sescc provides:
-
-+ reliably dating the Almagest by latitudes **or LONGITUDES.**
-+ reliably dating the Almagest by **arbitrary groups of TENS to HUNDREDS of its stars.**
-+ PROOF that the Almagest's **LONGITUDES were not COMPUTED, but MEASURED** by Ptolemy himself in 1st-2nd cy CE. 
-+ PROOF that the Almagest's **LATITUDES were measured by Hipparchus** himself in -2nd cy.
-+ PROOF that the Almagest includes **later corrections by al-Battani (9 cy) and Regiomontanus (15 cy)**
-+ PROOF that Fomenko,Kalashnikov & Nosovsky's method(1) that points to the medieval period is **HOPELESSLY FLAWED, IF NOT FRAUDULENT**. As well as the reason (more info below).
-+ PROOF of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary repositories, a great deal **BEFORE** the 11th century. This fact contradicts **THE FUNDAMENTAL AXIOM** of Fomenko and Nosovsky's 'New Chronology,' **rendering it irreparably flawed and requiring a comprehensive reconstruction from its foundations**.
+sescc provides further proof of **scientific activities** in -2nd cy B.C. Meaning: knowledge of writing, fractional counting, astronomical reference systems, documentary repositories, a great deal **BEFORE** the 11th century. This fact contradicts **THE FUNDAMENTAL AXIOM** of Fomenko and Nosovsky's 'New Chronology,' **rendering it irreparably flawed and requiring a comprehensive reconstruction from its foundations**.
 
 ## Related research / background:
 
@@ -266,7 +249,7 @@ You can explore the effect of uncommenting those lines in the result.
 
 First line **must** be HIP35550 (Delta Geminorum), which is a surrogate of the equinox as the reference point for any epoch, rather than the one employed by the computer, which may differ from that of the ancient astronomer.
 
-## A New Understanding of the Almagest
+## My understanding of the Almagest
 
 A series of experiments derived from this dating method allow us to propose a new hypothesis about the history of the Almagest, which explains some of its most enigmatic peculiarities. Unfortunately, due to lack of time, I cannot document these investigations properly. However, I am leaving the conclusions here so they do not fall into complete oblivion in case I finally do not find the time or motivation to do so.
 
