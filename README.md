@@ -1,8 +1,12 @@
 
-Update 11-3-2025: SESCC python script is now obsolete. Current implementation consists of a spreadsheet: https://docs.google.com/spreadsheets/d/1HH0t8uKxqkWCGXAGHsUzvAg4OmDGfDNzwau8je0OeSI/edit?usp=sharing
+**Update 11-3-2025:** SESCC python script is now **obsolete**. Current implementation consists of a spreadsheet:
+
+![SESCC Dating of the Almagest.]([plots/speed_signal.png](https://docs.google.com/spreadsheets/d/1HH0t8uKxqkWCGXAGHsUzvAg4OmDGfDNzwau8je0OeSI/edit?usp=sharing))
 
 -sescc will be updated to compute the past positions of the stars with skyfield and then perform dot product rather than signal cross correlation, as the spreadsheet does.
+
 -the spreadsheet will be also uploaded to this repository as a libreoffice document.
+
 -the dating method remains the same as explained below, but in a simpler form. The main advantadge is that the whole stellar catalog can be feeded as input, with no filtering whatsoever.
 
 # sescc
