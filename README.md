@@ -1,5 +1,5 @@
 
-**Update 11-3-2025:** SESCC python script is now **obsolete**. Current implementation consists of a spreadsheet:
+SESCC is also implemented as a spreadsheet:
 
 ![SESCC Dating of the Almagest.]([plots/speed_signal.png](https://docs.google.com/spreadsheets/d/1HH0t8uKxqkWCGXAGHsUzvAg4OmDGfDNzwau8je0OeSI/edit?usp=sharing))
 
