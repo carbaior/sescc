@@ -1,3 +1,4 @@
+Related paper: https://arxiv.org/abs/2504.12962
 
 SESCC is also implemented as a spreadsheet:
 
