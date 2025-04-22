@@ -12,7 +12,7 @@ from skyfield.data import hipparcos
 from operator import itemgetter
 
 #defaults:
-maxmag = 2.6 
+maxmag = 100 #by default, all stars in the catalog 
 filtro = 0
 dsource = 0
 n = len(sys.argv)
@@ -127,7 +127,10 @@ for i in range(1,len(estrellas)):
 	except KeyError:
 		print(f"Not able to get magnitude of star: HIP{hip}")
 		continue
-	if mag>maxmag and hip!=35550: #HIP35550 = Delta Geminorum (mag>3), must be always included as the implicit 0,0 coordinate.
+	
+	#if dating by longitudes, reference start must be always included as the implicit 0,0 coordinate (and placed first in the catalog):
+	#(default reference start hip35550 Delta Geminorum)	
+	if mag>maxmag and (dsource==0 or i!=1):
 		continue
 	almagest.append([hip,vel,pos])
 
@@ -145,7 +148,7 @@ if filtro!=0:
 	print ("Random group of "+filtro+" stars")
 
 n = len(almagest)
-src='latitudes' if dsource==0 else 'longitudes'
+src='latitudes' if dsource==0 else 'longitudes (experimental)'
 print(f"Dating by {src} {n-1} stars of the catalog.")
 
 #compute past position of each star on each epoch:
@@ -154,15 +157,16 @@ for i in range(n):
 	for t in range(maxt):
 		almagest[i].append(round(ecpos(almagest[i][0],t)[dsource]*1000))
 
-#adjust each position to the shared reference:
-for i in range(1,n):
-	print("Computing past positions ("+str(int(100*i/n))+"%)", end="\r")
-	for t in range(maxt+1):
-		almagest[i][t+2]-=almagest[0][t+2]
-		if almagest[i][t+2]<0:
-			almagest[i][t+2]+=360000
-
-almagest.pop(0)
+if dsource==1:
+	#dating by longitues: adjust each position to the shared reference (first star):
+	for i in range(1,n):
+		print("Computing past positions ("+str(int(100*i/n))+"%)", end="\r")
+		for t in range(maxt+1):
+			almagest[i][t+2]-=almagest[0][t+2]
+			if almagest[i][t+2]<0:
+				almagest[i][t+2]+=360000
+	almagest.pop(0)
+	
 almagest=np.array(almagest,dtype='int64')
 
 #stars velocities:
@@ -174,7 +178,7 @@ posiciones_catalogo=almagest[:,2]
 #SCC:
 year_corr=[]
 for t in range(maxt-1,-1,-1):
-	year_corr.append([fechamax-t*resolucion,np.correlate(velocidades_catalogo,np.abs(np.subtract(posiciones_catalogo,almagest[:,t+3])))[0],t])
+	year_corr.append([fechamax-t*resolucion,np.dot(velocidades_catalogo,np.abs(np.subtract(posiciones_catalogo,almagest[:,t+3]))),t])
 #/SCC!
 
 #normalize correlation values, between 0 y 1000:
