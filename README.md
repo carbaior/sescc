@@ -208,14 +208,6 @@ Options:
 
 ---
 
-### `merge_cache.py` — Cache management
-
-Merges separate latitude and longitude caches into the unified LZMA pickle.
-
-    python3 merge_cache.py --lat-only --out sescc_positions.pkl.xz
-
----
-
 ## Position cache
 
 All computed positions are cached in `sescc_positions.pkl.xz` (LZMA-compressed
