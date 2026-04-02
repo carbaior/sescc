@@ -52,13 +52,16 @@ Each script shows the C(T) curve and reports the epoch estimate.
 bash date_almagest_lat.sh    # by ecliptic latitudes  → expected ~-49 BCE
 bash date_almagest_lon.sh    # by ecliptic longitudes → expected ~-165 BCE
 ```
-
+![Almagest Latitudes](plots/almagest_latitudes.png)
+![Almagest Longitudes](plots/almagest_longitudes.png)
 ### Date Ulugh Beg (true epoch: 1437 CE)
 
 ```bash
 bash date_ulugh_lat.sh       # by ecliptic latitudes  → expected ~1177 CE
 bash date_ulugh_lon.sh       # by ecliptic longitudes → expected ~1452 CE
 ```
+![Ulugh Beg Latitudes](plots/ulughbeg_latitudes.png)
+![Ulugh Beg Longitudes](plots/ulughbeg_longitudes.png)
 
 ### Date Tycho Brahe (true epoch: ~1580 CE)
 
@@ -66,6 +69,8 @@ bash date_ulugh_lon.sh       # by ecliptic longitudes → expected ~1452 CE
 bash date_brahe_lat.sh       # by ecliptic latitudes  → expected ~1570 CE
 bash date_brahe_lon.sh       # by ecliptic longitudes → expected ~1547 CE
 ```
+![Brahe Latitudes](plots/brahe_latitudes.png)
+![Brahe Longitudes](plots/brahe_longitudes.png)
 
 ---
 
