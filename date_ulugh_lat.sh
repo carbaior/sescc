@@ -5,4 +5,4 @@
 
 awk -F';' 'substr($1,1,1)=="#" || $10+0 < 60' catalogs/ulughbeg_verbunt.csv | \
   grep -v "^19849;" | grep -v "^71681;" | \
-  python3 sescc.py
+  python3 sescc.py --lat
