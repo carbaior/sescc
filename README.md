@@ -1,11 +1,13 @@
 # SESCC — Speed-Error Signals Cross-Correlation
 
+[![DOI](https://zenodo.org/badge/786562158.svg)](https://doi.org/10.5281/zenodo.19456704)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.02521-b31b1b.svg)](https://arxiv.org/abs/2604.02521)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A method for dating ancient star catalogues by cross-correlating stellar
 proper-motion speeds with positional residuals.
 
 **Author:** Carlos Baiget Orts (asinfreedom@gmail.com)  
-**License:** GPLv3  
-**Repository:** https://github.com/carbaior/sescc
 
 ---
 
