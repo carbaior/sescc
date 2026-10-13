@@ -66,7 +66,8 @@ NOISE_LON  = getarg('--noise-lon',NOISE_LON,  float)
 MAX_DLAT   = getarg('--dlat',     MAX_DLAT,   float)
 MAX_DLON   = getarg('--dlon',     MAX_DLON,   float)
 INPUT_CSV  = getarg('--input',    INPUT_CSV,  str)
-excl_str   = getarg('--exclude',  '19849,71681', str)
+excl_str   = getarg('--exclude',  '', str)
+PAIR_NORM  = getarg('--pairnorm', 0.0, float)
 EXCLUDE    = set(int(x) for x in excl_str.split(',') if x.strip())
 
 print(f"Validation: epoch={EPOCH_YEAR}  seeds={N_SEEDS}  "
@@ -77,6 +78,7 @@ print()
 
 # ── Load cache ─────────────────────────────────────────────────────────────────
 _cache = {}
+_cache_dirty = False
 if os.path.exists(CACHE_FILE):
     print(f"Loading cache from {CACHE_FILE} ...")
     with lzma.open(CACHE_FILE, 'rb') as f:
@@ -214,6 +216,9 @@ def run_sescc_pairs(cat_lons_deg):
     pj   = np.array(pair_j,        dtype='int32')
     pv   = np.array(pair_vel,      dtype='float64')
     pdlc = np.array(pair_dlon_cat, dtype='float64')
+    if PAIR_NORM:
+        cnt = np.bincount(pi, minlength=N) + np.bincount(pj, minlength=N)
+        pv = pv / (cnt[pi] * cnt[pj]) ** PAIR_NORM
 
     year_corr = []
     for t in range(maxt - 1, -1, -1):
@@ -281,6 +286,8 @@ if minima:
     print(f"  Mean bias        : {arr.mean() - EPOCH_YEAR:+.0f} years")
     print(f"  Min / Max        : {arr.min()} / {arr.max()}")
     print(f"  % pre-CE         : {100*(arr < 0).mean():.0f}%")
+    p16, p84 = np.percentile(arr, [16, 84])
+    print(f"  68% range        : [{p16:.0f}, {p84:.0f}]")
 
 # ── Plot ───────────────────────────────────────────────────────────────────────
 if do_plot and minima:
