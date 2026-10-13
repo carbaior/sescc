@@ -57,6 +57,7 @@ MIN_VEL = 0.0; TOP_N = TOP_N_DEFAULT
 def usage():
     print(__doc__); sys.exit(0)
 
+PAIR_NORM = 0.0
 args = sys.argv[1:]
 if '-h' in args or '--help' in args: usage()
 if '--lat' in args: mode = 'lat'; args.remove('--lat')
@@ -76,6 +77,9 @@ for flag, var in [('--dlat','MAX_DLAT'),('--dlon','MAX_DLON'),('--minvel','MIN_V
     if flag in args:
         idx = args.index(flag); globals()[var] = float(args[idx+1])
         args.pop(idx+1); args.pop(idx)
+if '--pairnorm' in args:
+    idx = args.index('--pairnorm'); PAIR_NORM = float(args[idx+1])
+    args.pop(idx+1); args.pop(idx)
 if '--top' in args:
     idx = args.index('--top'); TOP_N = int(args[idx+1])
     args.pop(idx+1); args.pop(idx)
@@ -350,6 +354,10 @@ else:  # mode == 'lon'
     pair_j        = np.array([p[1] for p in pairs], dtype='int32')
     pair_vel      = np.array([p[2] for p in pairs], dtype='float64')
     pair_dlon_cat = np.array([p[3] for p in pairs], dtype='float64')
+    if PAIR_NORM:
+        cnt = np.bincount(pair_i, minlength=N) + np.bincount(pair_j, minlength=N)
+        pair_vel = pair_vel / (cnt[pair_i] * cnt[pair_j]) ** PAIR_NORM
+        print(f"Pair weights normalised by (n_i n_j)^{PAIR_NORM}\n")
 
     print("Computing correlation curve ...")
     year_corr = []
@@ -408,6 +416,9 @@ else:  # mode == 'lon'
             if not pi_b: continue
             pi_b=np.array(pi_b,dtype='int32'); pj_b=np.array(pj_b,dtype='int32')
             pv_b=np.array(pv_b,dtype='float64'); pdlc_b=np.array(pdlc_b,dtype='float64')
+            if PAIR_NORM:
+                cnt_b=np.bincount(pi_b,minlength=N)+np.bincount(pj_b,minlength=N)
+                pv_b=pv_b/(cnt_b[pi_b]*cnt_b[pj_b])**PAIR_NORM
             scc_b=[]
             for t in range(maxt-1,-1,-1):
                 dm=ep_b[:,t][pi_b]-ep_b[:,t][pj_b]; dm=dm%360000
