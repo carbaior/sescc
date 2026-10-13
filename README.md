@@ -235,6 +235,63 @@ a Ptolemaic one. Invariance to global longitude offsets verified empirically:
 identical epoch estimates.
 
 ---
+## Reproducing the paper (arXiv v2)
+
+All results use the same selection rule for every catalogue: positional error
+relative to Hipparcos below 60′, with no stars excluded individually.
+SESCC-pairs uses normalised pair weights (`--pairnorm 0.5`, paper Eq. 2).
+
+### Dating runs
+
+| Script | Paper result |
+|---|---|
+| `./date_almagest_lat.sh --bootstrap 1000` | T = −49 (bootstrap median −49, 76% pre-CE) |
+| `./date_almagest_lon.sh --bootstrap 1000` | T = −244 (bootstrap median −174, 90% pre-CE) |
+| `./date_brahe_lat.sh` | T = 1576 |
+| `./date_brahe_lon.sh --bootstrap 1000` | T = 1572 (bootstrap median 1582) |
+| `./date_ulugh_lat.sh` | T = 1182 |
+| `./date_ulugh_lon.sh --bootstrap 1000` | T = 1462 (bootstrap median 1466) |
+
+Add `--noplot` to skip the interactive plot. `--pairnorm 0` reproduces the
+unnormalised pair weights of v1.
+
+### Synthetic calibration
+
+```bash
+awk -F';' 'substr($1,1,1)=="#" || $10+0 < 60' catalogs/almagest_verbunt.csv > /tmp/almagest_60.csv
+
+# Latitudes (Table 1 and the calibration at T = -49)
+for E in -127 137 -49; do
+  python3 validate_lat_seeds.py --input /tmp/almagest_60.csv --epoch $E --seeds 200 --noplot
+done
+
+# Longitudes (Table 1 and the calibration at T = -244)
+for E in -127 137 -244; do
+  python3 validate_pairs_seeds.py --input /tmp/almagest_60.csv --exclude "" \
+    --pairnorm 0.5 --epoch $E --seeds 200 --noplot
+done
+```
+
+### Figures
+
+Each `sescc.py` run overwrites `sescc_lat.csv` / `sescc_lon.csv`, so generate
+each figure right after its run:
+
+```bash
+./date_brahe_lat.sh --noplot && python3 make_figures.py --curve sescc_lat.csv brahe_latitudes "Tycho Brahe — latitudes" 1580 lat
+./date_brahe_lon.sh --noplot && python3 make_figures.py --curve sescc_lon.csv brahe_longitudes "Tycho Brahe — longitudes" 1580 lon
+./date_ulugh_lat.sh --noplot && python3 make_figures.py --curve sescc_lat.csv ulughbeg_latitudes "Ulugh Beg — latitudes" 1437 lat
+./date_ulugh_lon.sh --noplot && python3 make_figures.py --curve sescc_lon.csv ulughbeg_longitudes "Ulugh Beg — longitudes" 1437 lon
+./date_almagest_lat.sh --bootstrap 1000 --noplot
+./date_almagest_lon.sh --bootstrap 1000 --noplot
+python3 make_figures.py
+```
+
+### Changes from v1
+
+- Pair weights normalised by sqrt(n_i n_j) (`--pairnorm`).
+- Uniform selection rule; the v1 scripts excluded Keid (HIP 19849) an
+
 
 ## Dependencies
 
