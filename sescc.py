@@ -5,7 +5,7 @@ Dates ancient star catalogues using ecliptic coordinates.
 
 Two modes:
   --lat    SESCC (latitudes):  C(T) = Σᵢ |µβᵢ| · |βᵢᶜᵃᵗ − βᵢᵐᵒᵈ(T)|
-  --lon    SESCC-pairs (longitudes): Cₚ(T) = Σ₍ᵢ,ⱼ₎ |µλᵢ−µλⱼ| · |Δλᵢⱼᶜᵃᵗ − Δλᵢⱼᵐᵒᵈ(T)|
+  --lon    SESCC-pairs (longitudes): Cₚ(T) = Σ₍ᵢ,ⱼ₎ |µλᵢ−µλⱼ| · |Δλᵢⱼᶜᵃᵗ − Δλᵢⱼᵐᵒᵈ(T)| / (nᵢnⱼ)^Q
 
 For latitudes, precession does not affect ecliptic latitudes — no reference
 correction needed.
@@ -30,6 +30,8 @@ Longitude options:
   --dlon D        max longitude difference for pairing (default 30.0 deg)
   --minvel V      min relative proper motion for a pair (default 0)
   --top N         show top N contributing pairs at minimum (default 10)
+  --pairnorm Q    divide each pair weight by (n_i*n_j)^Q, where n_i is the
+                  number of pairs of star i (default 0.0; the paper uses 0.5)
 
 Cache: sescc_positions.pkl.xz (LZMA pickle)
   If the cache file is not found, positions are computed on the fly

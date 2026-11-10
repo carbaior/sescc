@@ -309,3 +309,18 @@ on first run (~600 MB total).
 - ESA (1997). The Hipparcos and Tycho Catalogues. ESA SP-1200.
 - Park et al. (2021). AJ 161, 105. (DE441 ephemeris)
 - Rhodes, B. (2019). Skyfield. ASCL 1907.024.
+
+### Knobel (1917) test for Ulugh Beg latitudes
+
+`catalogs/knobel1917_derived_latitudes.csv` lists the 154 entries of Ulugh Beg's
+catalogue whose latitudes Knobel (1917, Tables IV and V) identified as copied
+from Ptolemy or derived from Ptolemy's differences of latitude.
+`catalogs/check_knobel.py` checks this list against `ulughbeg.dat` and writes
+filtered catalogues. Dating them (Section 4.3 of the paper) gives 1182, as with
+the full sample:
+
+```bash
+cd catalogs && python3 check_knobel.py && cd ..
+sed 's#ulughbeg_verbunt.csv#ulughbeg_verbunt_sinIVyV.csv#' date_ulugh_lat.sh > tmp.sh
+bash tmp.sh --noplot; rm tmp.sh
+```

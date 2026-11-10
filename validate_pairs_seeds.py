@@ -19,7 +19,7 @@
 #   --dlat D        SESCC-pairs max latitude difference (default 5.0)
 #   --dlon D        SESCC-pairs max longitude difference (default 30.0)
 #   --input CSV     input star list (default catalogs/almagest_verbunt.csv)
-#   --exclude HIPS  comma-separated HIP numbers to exclude (default 19849,71681)
+#   --exclude HIPS  comma-separated HIP numbers to exclude (default: none)
 #   --noplot        suppress plot
 #   -h/--help       this help
 
