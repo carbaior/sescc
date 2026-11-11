@@ -1,0 +1,40 @@
+== almagest [--sep 15 --cosb]
+Pairs found: 8464
+Minimum at: -274
+  year   -274: 0.0
+  year   -298: 0.0
+  year   -271: 0.0
+  year   -264: 0.1
+  year   -277: 0.1
+Minimum region (C<100): -599 to 231 (830 years wide)
+
+== almagest [--sep 10 --cosb]
+Pairs found: 3992
+Minimum at: -134
+  year   -134: 0.0
+  year   -149: 0.0
+  year   -138: 0.0
+  year   -135: 0.0
+  year   -139: 0.0
+Minimum region (C<100): -599 to 396 (995 years wide)
+
+== almagest [--sep 20 --cosb]
+Pairs found: 14201
+Minimum at: -223
+  year   -223: 0.0
+  year   -217: 0.0
+  year   -220: 0.0
+  year   -216: 0.0
+  year   -222: 0.1
+Minimum region (C<100): -599 to 231 (830 years wide)
+
+== almagest [--sep 30 --cosb]
+Pairs found: 29332
+Minimum at: -223
+  year   -223: 0.0
+  year   -230: 0.0
+  year   -227: 0.0
+  year   -226: 0.0
+  year   -225: 0.1
+Minimum region (C<100): -599 to 416 (1015 years wide)
+

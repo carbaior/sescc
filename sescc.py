@@ -32,6 +32,10 @@ Longitude options:
   --top N         show top N contributing pairs at minimum (default 10)
   --pairnorm Q    divide each pair weight by (n_i*n_j)^Q, where n_i is the
                   number of pairs of star i (default 0.0; the paper uses 0.5)
+  --cosb          scale longitude residuals by cos(mean latitude) of each pair,
+                  i.e. measure them as angles on the sky
+  --sep D         pair stars whose angular separation is below D deg, instead
+                  of using the |Δβ|, |Δλ| box
 
 Cache: sescc_positions.pkl.xz (LZMA pickle)
   If the cache file is not found, positions are computed on the fly
@@ -81,6 +85,11 @@ for flag, var in [('--dlat','MAX_DLAT'),('--dlon','MAX_DLON'),('--minvel','MIN_V
         args.pop(idx+1); args.pop(idx)
 if '--pairnorm' in args:
     idx = args.index('--pairnorm'); PAIR_NORM = float(args[idx+1])
+    args.pop(idx+1); args.pop(idx)
+COSB = False; MAX_SEP = 0.0
+if '--cosb' in args: COSB = True; args.remove('--cosb')
+if '--sep' in args:
+    idx = args.index('--sep'); MAX_SEP = float(args[idx+1])
     args.pop(idx+1); args.pop(idx)
 if '--top' in args:
     idx = args.index('--top'); TOP_N = int(args[idx+1])
@@ -323,7 +332,7 @@ if mode == 'lat':
     save_cache()
     outfile = "sescc_lat.csv"
     with open(outfile, 'w') as f:
-        for row in year_corr: f.write(f"{int(row[0])};{row[1]:.2f}\n")
+        for row in year_corr: f.write(f"{int(row[0])};{row[1]:.6f}\n")
     print(f"\nResults saved to {outfile}")
 
     if do_plot:
@@ -336,18 +345,28 @@ if mode == 'lat':
 else:  # mode == 'lon'
 # ══════════════════════════════════════════════════════════════════════════════
     print(f"Catalog: {N} stars  |  Mode: SESCC-pairs (longitudes)")
-    print(f"Pairing: |Δβ|<{MAX_DLAT}°, |Δλ|<{MAX_DLON}°\n")
+    if MAX_SEP > 0: print(f"Pairing: angular separation < {MAX_SEP}°")
+    else:           print(f"Pairing: |Δβ|<{MAX_DLAT}°, |Δλ|<{MAX_DLON}°")
+    print("Residuals scaled by cos(mean latitude) of each pair\n" if COSB else "")
 
     pairs = []
     for i in range(N):
         for j in range(i+1, N):
-            if abs(lat_cat_arr[i]-lat_cat_arr[j]) > MAX_DLAT: continue
             dlon = lon_cat_arr[i]-lon_cat_arr[j]
             dlon = dlon % 360000
             if dlon > 180000: dlon -= 360000
-            if abs(dlon) > MAX_DLON*1000: continue
+            if MAX_SEP > 0:
+                b1, b2 = math.radians(lat_cat_arr[i]), math.radians(lat_cat_arr[j])
+                cs = (math.sin(b1)*math.sin(b2) +
+                      math.cos(b1)*math.cos(b2)*math.cos(math.radians(dlon/1000)))
+                if math.degrees(math.acos(max(-1.0, min(1.0, cs)))) > MAX_SEP: continue
+            else:
+                if abs(lat_cat_arr[i]-lat_cat_arr[j]) > MAX_DLAT: continue
+                if abs(dlon) > MAX_DLON*1000: continue
             rel_vel = abs(velocidades[i]-velocidades[j])
             if rel_vel < MIN_VEL: continue
+            if COSB:
+                rel_vel *= math.cos(math.radians((lat_cat_arr[i]+lat_cat_arr[j])/2.0))
             pairs.append((i, j, rel_vel, dlon))
 
     n_pairs = len(pairs)
@@ -443,7 +462,7 @@ else:  # mode == 'lon'
     save_cache()
     outfile = "sescc_lon.csv"
     with open(outfile, 'w') as f:
-        for row in year_corr: f.write(f"{int(row[0])};{row[1]:.2f}\n")
+        for row in year_corr: f.write(f"{int(row[0])};{row[1]:.6f}\n")
     print(f"\nResults saved to {outfile}")
 
     if do_plot:

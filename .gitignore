@@ -4,3 +4,4 @@ hip_main.dat
 sescc_*_bootstrap.csv
 catalogs/*_sin*.csv
 tmp*
+__pycache__/
