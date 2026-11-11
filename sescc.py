@@ -112,7 +112,7 @@ def save_cache():
 if not load_cache():
     print(f"WARNING: cache file not found ({CACHE_FILE})")
     print("Positions will be computed on the fly.")
-    print("This may take several hours for a full 2500-year scan.")
+    print("This takes about 40 minutes for the Almagest on a single core.")
     print()
 
 planets = load('https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de441_part-1.bsp')
