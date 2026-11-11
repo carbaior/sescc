@@ -84,7 +84,7 @@ ts = load.timescale()
 with load.open(hipparcos.URL) as f:
     df = hipparcos.load_dataframe(f)
 
-siglos = 25
+siglos = 34
 resolucion = 1
 maxt = siglos * 100 // resolucion
 fechamax = 1900

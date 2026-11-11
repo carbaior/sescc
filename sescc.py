@@ -52,7 +52,7 @@ from skyfield.api import Star, load
 from skyfield.data import hipparcos
 
 CACHE_FILE = "./sescc_positions.pkl.xz"
-siglos = 25; resolucion = 1
+siglos = 34; resolucion = 1
 maxt = siglos * 100 // resolucion; fechamax = 1900
 MAX_DLAT_DEFAULT = 5.0; MAX_DLON_DEFAULT = 30.0; TOP_N_DEFAULT = 10
 

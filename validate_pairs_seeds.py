@@ -68,6 +68,9 @@ MAX_DLON   = getarg('--dlon',     MAX_DLON,   float)
 INPUT_CSV  = getarg('--input',    INPUT_CSV,  str)
 excl_str   = getarg('--exclude',  '', str)
 PAIR_NORM  = getarg('--pairnorm', 0.0, float)
+MAX_SEP    = getarg('--sep',      0.0, float)   # angular-separation pairing (deg)
+COSB       = '--cosb' in sys.argv                # longitude residuals as angles
+ANG_NOISE  = '--angnoise' in sys.argv            # longitude noise sigma/cos(beta)
 EXCLUDE    = set(int(x) for x in excl_str.split(',') if x.strip())
 
 print(f"Validation: epoch={EPOCH_YEAR}  seeds={N_SEEDS}  "
@@ -95,7 +98,7 @@ ts      = load.timescale()
 with load.open(hipparcos.URL) as f:
     df = hipparcos.load_dataframe(f)
 
-siglos     = 25
+siglos     = 34
 resolucion = 1
 maxt       = siglos * 100 // resolucion
 fechamax   = 1900
@@ -202,14 +205,23 @@ def run_sescc_pairs(cat_lons_deg):
     pair_i, pair_j, pair_vel, pair_dlon_cat = [], [], [], []
     for i in range(N):
         for j in range(i+1, N):
-            if abs(lats[i] - lats[j]) > MAX_DLAT:
-                continue
             rv = abs(vel_arr[i] - vel_arr[j])
             dlon = lon_cat[i] - lon_cat[j]
             dlon = dlon % 360000
             if dlon > 180000: dlon -= 360000
-            if abs(dlon) > MAX_DLON * 1000:
-                continue
+            if MAX_SEP > 0:
+                b1, b2 = math.radians(lats[i]), math.radians(lats[j])
+                cs = (math.sin(b1)*math.sin(b2) +
+                      math.cos(b1)*math.cos(b2)*math.cos(math.radians(dlon/1000)))
+                if math.degrees(math.acos(max(-1.0, min(1.0, cs)))) > MAX_SEP:
+                    continue
+            else:
+                if abs(lats[i] - lats[j]) > MAX_DLAT:
+                    continue
+                if abs(dlon) > MAX_DLON * 1000:
+                    continue
+            if COSB:
+                rv *= math.cos(math.radians((lats[i] + lats[j]) / 2.0))
             pair_i.append(i); pair_j.append(j)
             pair_vel.append(rv); pair_dlon_cat.append(dlon)
 
@@ -261,6 +273,8 @@ for seed in range(N_SEEDS):
         lat_true, lon_true, vel, _ = star_data[hip]
         lat_noise = np.random.normal(0, noise_lat_deg)
         lon_noise = np.random.normal(0, noise_lon_deg)
+        if ANG_NOISE:   # same angular error on the sky -> larger error in lambda near the pole
+            lon_noise /= max(math.cos(math.radians(lat_true)), 0.02)
         lon_obs   = (lon_true + lon_noise) % 360.0
         # Skip if NaN
         import math as _math
