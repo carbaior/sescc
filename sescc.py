@@ -187,8 +187,13 @@ for line in all_lines:
         lon_cat = round(float(parts[2]) * 1000)
     except (ValueError, IndexError): continue
     if maxmag < 100 and hip in hip_mag and hip_mag[hip] > maxmag: continue
+    if int(hip) not in df.index or not math.isfinite(df.loc[int(hip)]['ra_degrees']):
+        print(f"  HIP {hip}: no astrometric solution in Hipparcos, skipped", file=sys.stderr)
+        continue
     try: vel = pmotion_fn(hip)
-    except Exception: continue
+    except Exception as e:
+        print(f"  HIP {hip}: skipped ({e})", file=sys.stderr)
+        continue
     entry = [hip, vel, lat_cat, lon_cat]
     pct = int(100 * len(catalog) / max(1, total))
     print(f"Computing positions ({pct}%)", end='\r')

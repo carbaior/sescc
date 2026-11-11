@@ -148,13 +148,17 @@ print("Precomputing true positions and proper motions ...")
 star_data = {}  # hip -> (lat_true, vel, epoch_lats_array)
 for i, hip in enumerate(hips_all):
     print(f"  {i+1}/{len(hips_all)}", end='\r')
+    if int(hip) not in df.index or not math.isfinite(df.loc[int(hip)]['ra_degrees']):
+        print(f"\n  HIP {hip}: no astrometric solution in Hipparcos, skipped", file=sys.stderr)
+        continue
     try:
         lat_true = eclat_true(hip)
         vel = pmotion_lat(hip)
         epoch_lats = np.array([eclat_at_t(hip, t) for t in range(maxt)],
                                dtype='float64')
         star_data[hip] = (lat_true, vel, epoch_lats)
-    except Exception:
+    except Exception as e:
+        print(f"\n  HIP {hip}: skipped ({e})", file=sys.stderr)
         continue
 
 valid_hips = list(star_data.keys())

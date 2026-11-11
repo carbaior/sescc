@@ -164,13 +164,17 @@ star_data = {}   # hip -> (lat_true, lon_true, vel, epoch_lons_array)
 
 for i, hip in enumerate(hips_all):
     print(f"  {i+1}/{len(hips_all)}", end='\r')
+    if int(hip) not in df.index or not math.isfinite(df.loc[int(hip)]['ra_degrees']):
+        print(f"\n  HIP {hip}: no astrometric solution in Hipparcos, skipped", file=sys.stderr)
+        continue
     try:
         lat_true, lon_true = ecpos_both(hip)
         vel = pmotion_lon(hip)
         epoch_lons = np.array([eclon_at_t(hip, t) for t in range(maxt)],
                                dtype='float64')
         star_data[hip] = (lat_true, lon_true, vel, epoch_lons)
-    except Exception:
+    except Exception as e:
+        print(f"\n  HIP {hip}: skipped ({e})", file=sys.stderr)
         continue
 
 valid_hips = list(star_data.keys())
