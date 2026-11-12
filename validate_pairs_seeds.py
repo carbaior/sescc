@@ -215,6 +215,8 @@ def run_sescc_pairs(cat_lons_deg):
                       math.cos(b1)*math.cos(b2)*math.cos(math.radians(dlon/1000)))
                 if math.degrees(math.acos(max(-1.0, min(1.0, cs)))) > MAX_SEP:
                     continue
+                if abs(dlon)/1000*math.cos((b1+b2)/2) > MAX_SEP:
+                    continue
             else:
                 if abs(lats[i] - lats[j]) > MAX_DLAT:
                     continue
@@ -242,7 +244,7 @@ def run_sescc_pairs(cat_lons_deg):
         dlon_mod  = lon_mod_t[pi] - lon_mod_t[pj]
         dlon_mod  = dlon_mod % 360000
         dlon_mod  = np.where(dlon_mod > 180000, dlon_mod - 360000, dlon_mod)
-        residuals = np.abs(pdlc - dlon_mod)
+        residuals = np.abs((pdlc - dlon_mod + 180000) % 360000 - 180000)
         scc = np.dot(pv, residuals)
         year_corr.append([fechamax - t * resolucion, scc])
 

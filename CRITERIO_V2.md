@@ -15,3 +15,12 @@ y 30 --cosb` (almagest_cosb_sep.log: -134, -274, -223, -223). Por tanto, este co
 no demuestra un registro previo. El criterio se justifica por la estructura del ruido
 (check_noise.py) y por los catálogos de validación (validacion_cosb_sep.log), y se
 publica la sensibilidad completa.
+
+## Corrección posterior (12-11-2026)
+Los sintéticos de longitud con `--sep` mostraban un atractor espurio en +232. Causa: pares
+que rodean el polo de la eclíptica (|Δλ| cerca de 180°), cuyo residuo saltaba 360° y para
+los que Δλ·cosβ no aproxima la separación. Corrección: residuo reducido a ±180° y exclusión
+de los pares con |Δλ|·cos(β medio) mayor que la separación máxima (37 de 8492 pares en el
+Almagesto a 15°). Con el código corregido, el criterio (`--sep 15 --cosb`) sigue
+recuperando las épocas de Tycho y Ulugh Beg (sensibilidad_v2c.log), y las estimaciones del
+Almagesto apenas cambian. La caja |Δλ|<30° anterior da los mismos resultados que antes.

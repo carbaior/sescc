@@ -360,6 +360,7 @@ else:  # mode == 'lon'
                 cs = (math.sin(b1)*math.sin(b2) +
                       math.cos(b1)*math.cos(b2)*math.cos(math.radians(dlon/1000)))
                 if math.degrees(math.acos(max(-1.0, min(1.0, cs)))) > MAX_SEP: continue
+                if abs(dlon)/1000*math.cos((b1+b2)/2) > MAX_SEP: continue
             else:
                 if abs(lat_cat_arr[i]-lat_cat_arr[j]) > MAX_DLAT: continue
                 if abs(dlon) > MAX_DLON*1000: continue
@@ -391,7 +392,7 @@ else:  # mode == 'lon'
         dm = epoch_pos[:,t][pair_i] - epoch_pos[:,t][pair_j]
         dm = dm % 360000
         dm = np.where(dm > 180000, dm-360000, dm)
-        year_corr.append([fechamax-t*resolucion, np.dot(pair_vel, np.abs(pair_dlon_cat-dm))])
+        year_corr.append([fechamax-t*resolucion, np.dot(pair_vel, np.abs((pair_dlon_cat-dm+180000)%360000-180000))])
         print(f"  {int(100*(maxt-1-t)/maxt)}%", end='\r')
     print("  100%   ")
 
@@ -412,7 +413,7 @@ else:  # mode == 'lon'
     dm_min = epoch_pos[:,t_min_idx][pair_i] - epoch_pos[:,t_min_idx][pair_j]
     dm_min = dm_min % 360000
     dm_min = np.where(dm_min > 180000, dm_min-360000, dm_min)
-    res_at_min = np.abs(pair_dlon_cat - dm_min)
+    res_at_min = np.abs((pair_dlon_cat - dm_min + 180000) % 360000 - 180000)
     contrib    = pair_vel * res_at_min
     top_idx    = np.argsort(contrib)[-TOP_N:][::-1]
     print(f"\nTop {TOP_N} contributing pairs at minimum (year {year_min}):")
@@ -433,12 +434,21 @@ else:  # mode == 'lon'
             pi_b,pj_b,pv_b,pdlc_b=[],[],[],[]
             for i in range(N):
                 for j in range(i+1,N):
-                    if abs(lats_b[i]-lats_b[j])>MAX_DLAT: continue
                     dlon=lons_b[i]-lons_b[j]; dlon=dlon%360000
                     if dlon>180000: dlon-=360000
-                    if abs(dlon)>MAX_DLON*1000: continue
+                    if MAX_SEP > 0:
+                        b1, b2 = math.radians(lats_b[i]), math.radians(lats_b[j])
+                        cs = (math.sin(b1)*math.sin(b2) +
+                              math.cos(b1)*math.cos(b2)*math.cos(math.radians(dlon/1000)))
+                        if math.degrees(math.acos(max(-1.0, min(1.0, cs)))) > MAX_SEP: continue
+                        if abs(dlon)/1000*math.cos((b1+b2)/2) > MAX_SEP: continue
+                    else:
+                        if abs(lats_b[i]-lats_b[j])>MAX_DLAT: continue
+                        if abs(dlon)>MAX_DLON*1000: continue
+                    rv=abs(vels_b[i]-vels_b[j])
+                    if COSB: rv *= math.cos(math.radians((lats_b[i]+lats_b[j])/2.0))
                     pi_b.append(i); pj_b.append(j)
-                    pv_b.append(abs(vels_b[i]-vels_b[j])); pdlc_b.append(dlon)
+                    pv_b.append(rv); pdlc_b.append(dlon)
             if not pi_b: continue
             pi_b=np.array(pi_b,dtype='int32'); pj_b=np.array(pj_b,dtype='int32')
             pv_b=np.array(pv_b,dtype='float64'); pdlc_b=np.array(pdlc_b,dtype='float64')
@@ -449,7 +459,7 @@ else:  # mode == 'lon'
             for t in range(maxt-1,-1,-1):
                 dm=ep_b[:,t][pi_b]-ep_b[:,t][pj_b]; dm=dm%360000
                 dm=np.where(dm>180000,dm-360000,dm)
-                scc_b.append(np.dot(pv_b,np.abs(pdlc_b-dm)))
+                scc_b.append(np.dot(pv_b,np.abs((pdlc_b-dm+180000)%360000-180000)))
             years_b=np.array([fechamax-t*resolucion for t in range(maxt-1,-1,-1)],dtype='float64')
             boot_minima.append(int(years_b[np.argmin(scc_b)]))
             if (b+1)%10==0 or b==n_boot-1: print(f"  {b+1}/{n_boot}",end='\r')
