@@ -34,6 +34,8 @@ Longitude options:
                   number of pairs of star i (default 0.0; the paper uses 0.5)
   --cosb          scale longitude residuals by cos(mean latitude) of each pair,
                   i.e. measure them as angles on the sky
+  --signed        pair weights from the signed difference of angular speeds
+                  in longitude (Eq. 2 of the paper)
   --sep D         pair stars whose angular separation is below D deg, instead
                   of using the |Δβ|, |Δλ| box
 
@@ -87,6 +89,8 @@ if '--pairnorm' in args:
     idx = args.index('--pairnorm'); PAIR_NORM = float(args[idx+1])
     args.pop(idx+1); args.pop(idx)
 COSB = False; MAX_SEP = 0.0
+SIGNED = '--signed' in args
+if SIGNED: args.remove('--signed')
 if '--cosb' in args: COSB = True; args.remove('--cosb')
 if '--sep' in args:
     idx = args.index('--sep'); MAX_SEP = float(args[idx+1])
@@ -163,7 +167,8 @@ def pmotion_lon(hip):
     dlon = lon2.degrees - lon1.degrees
     if dlon > 180: dlon -= 360
     if dlon < -180: dlon += 360
-    return abs(round(dlon * 1000 * math.cos(math.radians(beta))))
+    v = round(dlon * 1000 * math.cos(math.radians(beta)))
+    return v if SIGNED else abs(v)
 
 hip_mag = {}
 try:
@@ -347,7 +352,8 @@ else:  # mode == 'lon'
     print(f"Catalog: {N} stars  |  Mode: SESCC-pairs (longitudes)")
     if MAX_SEP > 0: print(f"Pairing: angular separation < {MAX_SEP}°")
     else:           print(f"Pairing: |Δβ|<{MAX_DLAT}°, |Δλ|<{MAX_DLON}°")
-    print("Residuals scaled by cos(mean latitude) of each pair\n" if COSB else "")
+    print("Residuals scaled by cos(mean latitude) of each pair" if COSB else "")
+    print("Pair weights from signed angular speeds\n" if SIGNED else "")
 
     pairs = []
     for i in range(N):

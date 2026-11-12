@@ -70,7 +70,8 @@ excl_str   = getarg('--exclude',  '', str)
 PAIR_NORM  = getarg('--pairnorm', 0.0, float)
 MAX_SEP    = getarg('--sep',      0.0, float)   # angular-separation pairing (deg)
 COSB       = '--cosb' in sys.argv                # longitude residuals as angles
-ANG_NOISE  = '--angnoise' in sys.argv            # longitude noise sigma/cos(beta)
+ANG_NOISE  = '--angnoise' in sys.argv
+SIGNED     = '--signed' in sys.argv              # signed angular speeds in longitude            # longitude noise sigma/cos(beta)
 EXCLUDE    = set(int(x) for x in excl_str.split(',') if x.strip())
 
 print(f"Validation: epoch={EPOCH_YEAR}  seeds={N_SEEDS}  "
@@ -141,7 +142,8 @@ def pmotion_lon(hip):
     dlon = lon2.degrees - lon1.degrees
     if dlon >  180: dlon -= 360
     if dlon < -180: dlon += 360
-    return abs(dlon * 1000 * cos_beta)  # milli-deg/millennium
+    v = dlon * 1000 * cos_beta
+    return v if SIGNED else abs(v)  # milli-deg/millennium
 
 # ── Load star list ─────────────────────────────────────────────────────────────
 print(f"Loading star list from {INPUT_CSV} ...")

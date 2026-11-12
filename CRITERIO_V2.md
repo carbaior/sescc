@@ -24,3 +24,12 @@ de los pares con |Δλ|·cos(β medio) mayor que la separación máxima (37 de 8
 Almagesto a 15°). Con el código corregido, el criterio (`--sep 15 --cosb`) sigue
 recuperando las épocas de Tycho y Ulugh Beg (sensibilidad_v2c.log), y las estimaciones del
 Almagesto apenas cambian. La caja |Δλ|<30° anterior da los mismos resultados que antes.
+
+## Signed pair weights (added after the v2c runs)
+Eq. (2) defines the pair weight with signed angular speeds,
+|mu_i cos(b_i) - mu_j cos(b_j)|. Up to v2c, `pmotion_lon` returned absolute
+values, so the weight was ||v_i| - |v_j||. The option `--signed` implements
+Eq. (2); the default keeps the old behaviour for reproducibility.
+The criterion (`--sep 15 --cosb`) was NOT re-chosen: with `--signed` it gives
+Tycho 1572 and Ulugh Beg 1457, as before (sensibilidad_v2d.log).
+Almagest: -274 -> -240.
