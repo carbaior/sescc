@@ -1,0 +1,45 @@
+catalogs/almagest_60.csv: 842 estrellas distintas, 8338 pares (sep 15 grados; 39 descartados cerca del polo)
+residuos angulares, velocidades con signo, normalizado 1/sqrt(n n)
+N_eff de pares = (sum W)^2 / sum W^2 = 192.2
+
+   HIP    entrada      beta   v_lambda  pares  peso %
+  19849  8=Eri         -28.4      -799     18    12.2
+  96100  14=Dra         80.9      -503     17     5.8
+   8102  12=Cet        -24.8      -346     10     3.1
+  14632  6=Per          30.6       325     24     2.4
+  16537  13=Eri        -27.7      -260     16     2.0
+  10644  3=Tri          19.3       276     23     1.6
+ 102422  5=Cep          71.8       204     20     1.5
+  57757  5=Vir           0.7       219     17     1.5
+  17378  12=Eri        -28.7        28     15     1.1
+  17593  11=Eri        -31.1        19     15     1.1
+catalogs/almagest_60.csv: 842 estrellas distintas, 8338 pares (sep 15 grados; 39 descartados cerca del polo)
+residuos angulares, velocidades con signo, sin normalizar
+N_eff de pares = (sum W)^2 / sum W^2 = 175.6
+
+   HIP    entrada      beta   v_lambda  pares  peso %
+  19849  8=Eri         -28.4      -799     18    13.7
+  96100  14=Dra         80.9      -503     17     5.6
+  14632  6=Per          30.6       325     24     3.0
+  10644  3=Tri          19.3       276     23     2.1
+  16537  13=Eri        -27.7      -260     16     1.7
+   8102  12=Cet        -24.8      -346     10     1.7
+ 102422  5=Cep          71.8       204     20     1.5
+  57757  5=Vir           0.7       219     17     1.3
+  17378  12=Eri        -28.7        28     15     1.0
+ 114971  2=Psc           7.3       196     24     1.0
+catalogs/almagest_60.csv: 842 estrellas distintas, 8338 pares (sep 15 grados; 39 descartados cerca del polo)
+residuos en lambda, velocidades con signo, normalizado 1/sqrt(n n)
+N_eff de pares = (sum W)^2 / sum W^2 = 95.1
+
+   HIP    entrada      beta   v_lambda  pares  peso %
+  96100  14=Dra         80.9      -503     17    18.8
+  19849  8=Eri         -28.4      -799     18     7.4
+  89937  18=Dra         83.6      -171     21     3.3
+ 102422  5=Cep          71.8       204     20     2.9
+  86201  21=Dra         86.9       -66     20     1.9
+   8102  12=Cet        -24.8      -346     10     1.8
+  94648  16=Dra         80.7        43     18     1.8
+  94376  11=Dra         82.9        25     20     1.7
+  85805  20=Dra         86.9       -31     22     1.7
+  86614  17=Dra         84.2        16     21     1.7
